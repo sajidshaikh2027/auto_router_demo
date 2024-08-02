@@ -9,7 +9,7 @@ class AccountDetailsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: const Center(
-        child: Text("account details screen"),
+        child: Text("Account details screen"),
       ),
     );
   }

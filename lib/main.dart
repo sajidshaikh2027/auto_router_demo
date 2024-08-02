@@ -1,3 +1,5 @@
+import 'package:auto_router_demo/services/navigations/app_router.dart';
+
 import 'utils/exports.dart';
 
 void main() {
@@ -11,7 +13,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appRouter = AppRouter();
-
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',

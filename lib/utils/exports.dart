@@ -12,4 +12,6 @@ export '../model/user.dart';
 
 export '../services/network/dio_client.dart';
 
-export 'package:auto_router_demo/services/navigations/app_routes.dart';
+export 'package:auto_router_demo/services/navigations/app_router.gr.dart';
+
+

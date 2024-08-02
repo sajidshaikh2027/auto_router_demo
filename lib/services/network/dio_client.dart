@@ -19,7 +19,7 @@ class DioClient {
           responseType: ResponseType.json, // Ensure the response is parsed as JSON
         ),
       );
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       throw Exception(e.message);
     }
 

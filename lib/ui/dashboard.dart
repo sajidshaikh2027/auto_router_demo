@@ -1,4 +1,4 @@
-import 'package:auto_router_demo/services/navigations/app_routes.gr.dart';
+
 
 import '../utils/exports.dart';
 
@@ -14,7 +14,7 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
-        routes: const [HomeRoute(), AccountRoute()],
+        routes: const [HomeRoute(), AccountRoute(),SettingRoute()],
         bottomNavigationBuilder: (context, child) {
           final tabsRouter = AutoTabsRouter.of(context);
           return BottomNavigationBar(
@@ -43,6 +43,12 @@ class _DashboardState extends State<Dashboard> {
                 activeIcon: Icon(Icons.account_box_outlined),
                 label: "Account",
                 tooltip: 'Go to Account', // Tooltip for accessibility
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.settings),
+                activeIcon: Icon(Icons.settings_outlined),
+                label: "Settings",
+                tooltip: 'Settings', // Tooltip for accessibility
               ),
             ],
             currentIndex: tabsRouter.activeIndex,

@@ -1,4 +1,3 @@
-import 'package:auto_router_demo/services/navigations/app_routes.gr.dart';
 
 import '../utils/exports.dart';
 
