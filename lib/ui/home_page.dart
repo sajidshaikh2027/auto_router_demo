@@ -11,6 +11,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<Datum> users = []; // Change List<User> to List<Datum>
   var selectedIndex = 0;
+  bool isLoading = true; // Add a loading state
 
   @override
   void initState() {
@@ -24,30 +25,41 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
           Expanded(
-            child: ListView.builder(
-              itemCount: users.length,
-              itemBuilder: (context, index) {
-                final user = users[index];
-                return Card(
-                  margin: const EdgeInsets.all(10),
-                  child: ListTile(
-                    onTap: () async {
-                      print("on tap");
-                      var result =
-                          await context.router.push(UserDetails(user: user));
-                      // Handle the result
-                      if (result != null && result is Datum) {
-                        print('Result from UserDetails: ${result.firstName}');
-                      }
+            child: isLoading // Check if loading
+                ? const Center(
+                    child:
+                        CircularProgressIndicator(), // Show loading indicator
+                  )
+                : ListView.builder(
+                    itemCount: users.length,
+                    itemBuilder: (context, index) {
+                      final user = users[index];
+                      return Card(
+                        margin: const EdgeInsets.all(10),
+                        child: ListTile(
+                          onTap: () async {
+                            print("on tap");
+                            var result = await context.router
+                                .push(UserDetails(user: user));
+                            // Handle the result
+                            if (result != null && result is Datum) {
+                              print(
+                                  'Result from UserDetails: ${result.firstName}');
+                            }
+                          },
+                          leading: Image.network(user.avatar),
+                          title: Text('${user.firstName} ${user.lastName}'),
+                          subtitle: Text(user.email),
+                        ),
+                      );
                     },
-                    leading: Image.network(user.avatar),
-                    title: Text('${user.firstName} ${user.lastName}'),
-                    subtitle: Text(user.email),
                   ),
-                );
-              },
-            ),
           ),
+          ElevatedButton(
+              onPressed: () {
+                context.pushRoute(const RouteNotFound());
+              },
+              child: const Text("Page Not found"))
         ],
       ),
     );
@@ -67,11 +79,16 @@ class _HomePageState extends State<HomePage> {
       if (mounted) {
         setState(() {
           users = user.data;
+          isLoading = false; // Set loading to false after data is fetched
         });
       }
-      // print(user.data[0].firstName);
     } else {
       print('Failed to load data');
+      if (mounted) {
+        setState(() {
+          isLoading = false; // Set loading to false even if there's an error
+        });
+      }
     }
   }
 }

@@ -10,31 +10,7 @@ class UserDetails extends StatefulWidget {
   State<UserDetails> createState() => _UserDetailsState();
 }
 
-class _UserDetailsState extends State<UserDetails> with AutoRouteAware {
-  AutoRouteObserver? _observer;
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    _observer =
-        RouterScope.of(context).firstObserverOfType<AutoRouteObserver>();
-    if (_observer != null) {
-      _observer!.subscribe(this, context.routeData);
-    }
-  }
-
-  @override
-  void dispose() {
-    _observer?.unsubscribe(this);
-    super.dispose();
-  }
-
-  @override
-  void didPop() {
-    print("sajid");
-    super.didPop();
-  }
-
+class _UserDetailsState extends State<UserDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
