@@ -1,5 +1,3 @@
-
-
 import '../utils/exports.dart';
 
 @RoutePage()
@@ -14,7 +12,9 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
-        routes: const [HomeRoute(), AccountRoute(),SettingRoute()],
+        routes: const [
+          HomeRoute(), AccountRoute(), SettingRoute()
+        ],
         bottomNavigationBuilder: (context, child) {
           final tabsRouter = AutoTabsRouter.of(context);
           return BottomNavigationBar(

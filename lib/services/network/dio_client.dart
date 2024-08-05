@@ -9,14 +9,14 @@ class DioClient {
     Map<String, dynamic>? queryParameters,
   }) async {
     Response response;
-
     try {
       response = await _dio.request(
         url,
         queryParameters: queryParameters,
         options: Options(
           method: requestType == RequestType.get ? 'GET' : 'POST',
-          responseType: ResponseType.json, // Ensure the response is parsed as JSON
+          responseType:
+              ResponseType.json, // Ensure the response is parsed as JSON
         ),
       );
     } on DioException catch (e) {

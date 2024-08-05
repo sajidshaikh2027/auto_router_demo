@@ -31,9 +31,14 @@ class _HomePageState extends State<HomePage> {
                 return Card(
                   margin: const EdgeInsets.all(10),
                   child: ListTile(
-                    onTap: () {
+                    onTap: () async {
                       print("on tap");
-                      context.router.push(UserDetails(user: user));
+                      var result =
+                          await context.router.push(UserDetails(user: user));
+                      // Handle the result
+                      if (result != null && result is Datum) {
+                        print('Result from UserDetails: ${result.firstName}');
+                      }
                     },
                     leading: Image.network(user.avatar),
                     title: Text('${user.firstName} ${user.lastName}'),
@@ -64,7 +69,7 @@ class _HomePageState extends State<HomePage> {
           users = user.data;
         });
       }
-      print(user.data[0].firstName);
+      // print(user.data[0].firstName);
     } else {
       print('Failed to load data');
     }
