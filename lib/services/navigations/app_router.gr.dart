@@ -100,6 +100,8 @@ abstract class $AppRouter extends _i12.RootStackRouter {
         child: _i11.UserDetails(
           key: args.key,
           user: args.user,
+          id: args.id,
+          query: args.query,
         ),
       );
     },
@@ -266,13 +268,19 @@ class UserDetails extends _i12.PageRouteInfo<UserDetailsArgs> {
   UserDetails({
     _i13.Key? key,
     required _i13.Datum user,
+    int id = 0,
+    String query = 'none',
     List<_i12.PageRouteInfo>? children,
   }) : super(
           UserDetails.name,
           args: UserDetailsArgs(
             key: key,
             user: user,
+            id: id,
+            query: query,
           ),
+          rawPathParams: {'id': id},
+          rawQueryParams: {'query': query},
           initialChildren: children,
         );
 
@@ -286,14 +294,20 @@ class UserDetailsArgs {
   const UserDetailsArgs({
     this.key,
     required this.user,
+    this.id = 0,
+    this.query = 'none',
   });
 
   final _i13.Key? key;
 
   final _i13.Datum user;
 
+  final int id;
+
+  final String query;
+
   @override
   String toString() {
-    return 'UserDetailsArgs{key: $key, user: $user}';
+    return 'UserDetailsArgs{key: $key, user: $user, id: $id, query: $query}';
   }
 }

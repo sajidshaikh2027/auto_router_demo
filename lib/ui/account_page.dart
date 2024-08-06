@@ -21,7 +21,7 @@ class _AccountPageState extends State<AccountPage> {
           Center(
             child: ElevatedButton(
               onPressed: () {
-                context.router.push(const AccountDetailsRoute());
+                context.router.navigate(const AccountDetailsRoute());
               },
               child: const Text("Go to Account Profile"),
             ),

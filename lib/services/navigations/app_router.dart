@@ -7,6 +7,7 @@ class AppRouter extends $AppRouter {
   List<AutoRoute> get routes => [
         AutoRoute(
           page: LoginRoute.page,
+          path: AppPath.login,
           initial: true,
           guards: [AuthenticationMiddleWare()],
         ),
@@ -24,11 +25,16 @@ class AppRouter extends $AppRouter {
                     ),
                     CustomRoute(
                       page: UserDetails.page,
+                      title: (ctx, data) {
+                        return 'User Details Details ${data.pathParams.get('id')}';
+                      },
                       transitionsBuilder: TransitionsBuilders.zoomIn,
                     ),
                   ]),
               CustomRoute(
                 page: AccountRoute.page,
+                path: AppPath.account,
+                maintainState: false,
               ),
               AutoRoute(
                   page: SettingRoute.page,
@@ -40,17 +46,12 @@ class AppRouter extends $AppRouter {
                     AutoRoute(page: StatusRoute.page)
                   ])
             ]),
+        CustomRoute(path: '/*', page: RouteNotFound.page),
         CustomRoute(
           page: AccountDetailsRoute.page,
-          maintainState: false,
           transitionsBuilder: TransitionsBuilders.zoomIn,
           durationInMilliseconds: 200,
         ),
-        /*CustomRoute(
-            page: UserDetails.page,
-            transitionsBuilder: TransitionsBuilders.zoomIn,
-            durationInMilliseconds: 100),*/
-        CustomRoute(path: '/*', page: RouteNotFound.page),
       ];
 }
 
@@ -63,3 +64,18 @@ class AccountTabsPage extends AutoRouter {
 class HomeWithBottomPage extends AutoRouter {
   const HomeWithBottomPage({super.key});
 }
+
+/*
+
+CustomRoute(
+page: AccountTabsRoute.page,
+path: AppPath.account,
+children: [
+CustomRoute(page: AccountRoute.page, maintainState: false),
+CustomRoute(
+page: AccountDetailsRoute.page,
+maintainState: false,
+transitionsBuilder: TransitionsBuilders.zoomIn,
+durationInMilliseconds: 200,
+),
+]),*/

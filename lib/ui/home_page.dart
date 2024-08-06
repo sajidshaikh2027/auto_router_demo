@@ -39,8 +39,8 @@ class _HomePageState extends State<HomePage> {
                         child: ListTile(
                           onTap: () async {
                             print("on tap");
-                            var result = await context.router
-                                .push(UserDetails(user: user));
+                            var result = await context.router.push(
+                                UserDetails(user: user, id: index, query: "1"));
                             // Handle the result
                             if (result != null && result is Datum) {
                               print(
@@ -57,6 +57,7 @@ class _HomePageState extends State<HomePage> {
           ),
           ElevatedButton(
               onPressed: () {
+                // context.navigateTo(BooksTab(children: [BookDetailsRoute(id: 1)];
                 context.pushRoute(const RouteNotFound());
               },
               child: const Text("Page Not found"))

@@ -4,7 +4,15 @@ import '../utils/exports.dart';
 class UserDetails extends StatefulWidget {
   final Datum user;
 
-  const UserDetails({super.key, required this.user});
+  final int id;
+  final String query;
+
+  const UserDetails({
+    super.key,
+    required this.user,
+    @pathParam this.id = 0, //path param
+    @queryParam this.query = 'none',
+  });
 
   @override
   State<UserDetails> createState() => _UserDetailsState();
@@ -39,6 +47,9 @@ class _UserDetailsState extends State<UserDetails> {
             ),
             const SizedBox(height: 8),
             Text(widget.user.email, style: const TextStyle(fontSize: 18)),
+            Text('ID: ${widget.id}', style: const TextStyle(fontSize: 18)),
+            Text('Query: ${widget.query}',
+                style: const TextStyle(fontSize: 18)),
             /*ElevatedButton(
               onPressed: () {
                 context.router.maybePop(user);

@@ -3,6 +3,9 @@ import 'package:auto_router_demo/services/observer/my_observer.dart';
 import 'package:auto_router_demo/services/storage/shared_pref.dart';
 import 'utils/exports.dart';
 
+
+
+final appRouter = AppRouter();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized(); // Ensure binding is initialized
   await SharedPref.init();
@@ -15,7 +18,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final appRouter = AppRouter();
+
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
