@@ -54,15 +54,6 @@ class _HomePageState extends State<HomePage> {
                     },
                   ),
           ),
-          ElevatedButton(
-              onPressed: () {
-
-                // if you want to navigate new tabs use this
-                //context.router.navigate(AccountTabsRoute(children: [AccountDetailsRoute()]));
-
-                context.pushRoute(const RouteNotFound());
-              },
-              child: const Text("Page Not found"))
         ],
       ),
     );

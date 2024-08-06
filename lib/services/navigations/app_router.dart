@@ -2,13 +2,27 @@ import '../../utils/exports.dart';
 import 'authentication_middleware.dart';
 
 @AutoRouterConfig()
-class AppRouter extends $AppRouter {
+class MyAppRouter extends $MyAppRouter {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(
+          page: RouteHome.page,
+          initial: true,
+        ),
+        AutoRoute(
+          page: RouteA.page,
+          initial: false,
+        ),
+        AutoRoute(page: RouteB.page),
+        CustomRoute(
+          page: RouteC.page,
+        ),
+        AutoRoute(page: RouteNavigationHome.page),
+        AutoRoute(page: RouteDetails.page),
+        AutoRoute(
           page: LoginRoute.page,
           path: AppPath.login,
-          initial: true,
+          initial: false,
           guards: [AuthenticationMiddleWare()],
         ),
         CustomRoute(
@@ -45,11 +59,10 @@ class AppRouter extends $AppRouter {
                     ),
                   ]),
               CustomRoute(
-                page: AccountRoute.page,
-                path: AppPath.account,
-                maintainState: false,
-                initial: true
-              ),
+                  page: AccountRoute.page,
+                  path: AppPath.account,
+                  maintainState: false,
+                  initial: true),
               AutoRoute(
                   page: SettingRoute.page,
                   path: AppPath.setting,

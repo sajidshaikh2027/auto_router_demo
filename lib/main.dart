@@ -5,7 +5,7 @@ import 'utils/exports.dart';
 
 
 
-final appRouter = AppRouter();
+final appRouter = MyAppRouter();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized(); // Ensure binding is initialized

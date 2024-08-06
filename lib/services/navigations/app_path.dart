@@ -6,4 +6,5 @@ abstract class AppPath {
   static const accountDetails = '/accountDetails';
   static const setting = 'setting';
   static const login = '/login';
+
 }
