@@ -9,8 +9,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Datum> users = []; // Change List<User> to List<Datum>
-  var selectedIndex = 0;
+  List<Datum> users = []; //// Change List<User> to List<Datum>
   bool isLoading = true; // Add a loading state
 
   @override
@@ -57,7 +56,10 @@ class _HomePageState extends State<HomePage> {
           ),
           ElevatedButton(
               onPressed: () {
-                // context.navigateTo(BooksTab(children: [BookDetailsRoute(id: 1)];
+
+                // if you want to navigate new tabs use this
+                //context.router.navigate(AccountTabsRoute(children: [AccountDetailsRoute()]));
+
                 context.pushRoute(const RouteNotFound());
               },
               child: const Text("Page Not found"))

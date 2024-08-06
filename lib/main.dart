@@ -6,6 +6,7 @@ import 'utils/exports.dart';
 
 
 final appRouter = AppRouter();
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized(); // Ensure binding is initialized
   await SharedPref.init();

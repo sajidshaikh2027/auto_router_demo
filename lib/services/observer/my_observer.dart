@@ -1,6 +1,6 @@
 import '../../utils/exports.dart';
 
- class MyObserver extends AutoRouterObserver {
+class MyObserver extends AutoRouterObserver {
   @override
   void didPush(Route route, Route? previousRoute) {}
 

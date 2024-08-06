@@ -19,6 +19,7 @@ class AppRouter extends $AppRouter {
               CustomRoute(
                   page: HomeWithBottomRoute.page,
                   path: AppPath.home,
+                  maintainState: true,
                   children: [
                     CustomRoute(
                       page: HomeRoute.page,
@@ -32,9 +33,22 @@ class AppRouter extends $AppRouter {
                     ),
                   ]),
               CustomRoute(
+                  page: AccountTabsRoute.page,
+                  path: AppPath.account,
+                  children: [
+                    CustomRoute(page: AccountRoute.page, maintainState: false),
+                    CustomRoute(
+                      page: AccountDetailsRoute.page,
+                      maintainState: false,
+                      transitionsBuilder: TransitionsBuilders.zoomIn,
+                      durationInMilliseconds: 200,
+                    ),
+                  ]),
+              CustomRoute(
                 page: AccountRoute.page,
                 path: AppPath.account,
                 maintainState: false,
+                initial: true
               ),
               AutoRoute(
                   page: SettingRoute.page,
@@ -47,11 +61,11 @@ class AppRouter extends $AppRouter {
                   ])
             ]),
         CustomRoute(path: '/*', page: RouteNotFound.page),
-        CustomRoute(
+        /*CustomRoute(
           page: AccountDetailsRoute.page,
           transitionsBuilder: TransitionsBuilders.zoomIn,
           durationInMilliseconds: 200,
-        ),
+        ),*/
       ];
 }
 

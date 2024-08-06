@@ -9,7 +9,7 @@ class SettingPage extends StatelessWidget {
     return AutoTabsRouter.tabBar(
         routes: const [ChatRoute(), StatusRoute()],
         builder: (context, child, controller) {
-          final tabsRouter = AutoTabsRouter.of(context);
+          //final tabsRouter = AutoTabsRouter.of(context);
           return Scaffold(
             appBar: AppBar(
               title: const Text("Text"),
