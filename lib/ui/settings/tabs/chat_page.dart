@@ -7,7 +7,6 @@ class ChatPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     // PageController pageController = PageController();
 
     final List<CardData> cardDataList = [

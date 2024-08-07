@@ -1,6 +1,5 @@
 import '../../../utils/exports.dart';
 
-
 @RoutePage()
 class StatusPage extends StatelessWidget {
   const StatusPage({super.key});

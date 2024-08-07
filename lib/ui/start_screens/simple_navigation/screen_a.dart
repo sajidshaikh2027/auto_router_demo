@@ -1,6 +1,3 @@
-
-
-
 import '../../../utils/exports.dart';
 
 @RoutePage()
@@ -13,8 +10,10 @@ class ScreenA extends StatelessWidget {
       backgroundColor: Colors.green,
       appBar: AppBar(
         title: const Text("Screen - A",
-            style: TextStyle(fontSize: 22,color: Colors.black,
-            fontWeight:FontWeight.bold )),
+            style: TextStyle(
+                fontSize: 22,
+                color: Colors.black,
+                fontWeight: FontWeight.bold)),
       ),
       body: Center(
         child: ElevatedButton(
@@ -34,10 +33,11 @@ class ScreenA extends StatelessWidget {
               // context.router.push(const RouteB());
               // or by using paths
               // context.router.pushNamed('/route-b');
-
-
             },
-            child: const Text("Navigate From A to B",style: TextStyle(fontSize: 18,color: Colors.black),)),
+            child: const Text(
+              "Navigate From A to B",
+              style: TextStyle(fontSize: 18, color: Colors.black),
+            )),
       ),
     );
   }
