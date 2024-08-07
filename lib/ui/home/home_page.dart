@@ -1,4 +1,4 @@
-import '../utils/exports.dart';
+import '../../utils/exports.dart';
 
 @RoutePage()
 class HomePage extends StatefulWidget {
@@ -38,8 +38,8 @@ class _HomePageState extends State<HomePage> {
                         child: ListTile(
                           onTap: () async {
                             print("on tap");
-                            var result = await context.router.push(
-                                UserDetails(user: user, id: index, query: "1"));
+                            var result = await context.router
+                                .push(UserDetails(user: user));
                             // Handle the result
                             if (result != null && result is Datum) {
                               print(

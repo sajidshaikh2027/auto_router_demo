@@ -1,3 +1,5 @@
+import 'package:auto_router_demo/ui/settings/tabs/pageview/page_view_one.dart';
+
 import '../../utils/exports.dart';
 import 'authentication_middleware.dart';
 
@@ -11,7 +13,6 @@ class MyAppRouter extends $MyAppRouter {
         ),
         AutoRoute(
           page: RouteA.page,
-          initial: false,
         ),
         AutoRoute(page: RouteB.page),
         CustomRoute(
@@ -22,7 +23,6 @@ class MyAppRouter extends $MyAppRouter {
         AutoRoute(
           page: LoginRoute.page,
           path: AppPath.login,
-          initial: false,
           guards: [AuthenticationMiddleWare()],
         ),
         CustomRoute(
@@ -33,16 +33,12 @@ class MyAppRouter extends $MyAppRouter {
               CustomRoute(
                   page: HomeWithBottomRoute.page,
                   path: AppPath.home,
-                  maintainState: true,
                   children: [
                     CustomRoute(
                       page: HomeRoute.page,
                     ),
                     CustomRoute(
                       page: UserDetails.page,
-                      title: (ctx, data) {
-                        return 'User Details Details ${data.pathParams.get('id')}';
-                      },
                       transitionsBuilder: TransitionsBuilders.zoomIn,
                     ),
                   ]),
@@ -69,17 +65,24 @@ class MyAppRouter extends $MyAppRouter {
                   children: [
                     AutoRoute(
                       page: ChatRoute.page,
+                      children: [
+                        AutoRoute(page: RouteViewOne.page, path: 'pageviewone'), // Define route
+
+                      ]
                     ),
                     AutoRoute(page: StatusRoute.page)
                   ])
             ]),
         CustomRoute(path: '/*', page: RouteNotFound.page),
-        /*CustomRoute(
+        CustomRoute(
           page: AccountDetailsRoute.page,
           transitionsBuilder: TransitionsBuilders.zoomIn,
           durationInMilliseconds: 200,
-        ),*/
-      ];
+        ),
+
+
+
+  ];
 }
 
 @RoutePage()

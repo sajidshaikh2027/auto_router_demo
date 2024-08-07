@@ -1,4 +1,4 @@
-import '../utils/exports.dart';
+import '../../utils/exports.dart';
 
 @RoutePage()
 class PageNotFound extends StatelessWidget {
@@ -10,7 +10,7 @@ class PageNotFound extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
       ),
-      body: Center(
+      body: const Center(
         child: Text("Page not Found"),
       ),
     );

@@ -22,7 +22,6 @@ class DioClient {
     } on DioException catch (e) {
       throw Exception(e.message);
     }
-
     return response;
   }
 }

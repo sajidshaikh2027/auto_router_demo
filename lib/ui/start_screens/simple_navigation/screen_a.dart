@@ -1,8 +1,7 @@
-import 'package:auto_route/annotations.dart';
-import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
 
-import '../../../services/navigations/app_router.gr.dart';
+
+
+import '../../../utils/exports.dart';
 
 @RoutePage()
 class ScreenA extends StatelessWidget {
@@ -22,7 +21,7 @@ class ScreenA extends StatelessWidget {
             onPressed: () {
               print("current_name Screen A : ${context.router.current.path}");
 
-              AutoRouter.of(context).push(RouteB());
+              context.router.push(const RouteB());
 
               // Navigate to Screen B with arguments
 
