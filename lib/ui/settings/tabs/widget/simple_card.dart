@@ -14,6 +14,7 @@ class SimpleCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
+      color: Colors.deepOrangeAccent,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
