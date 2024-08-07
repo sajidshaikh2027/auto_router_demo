@@ -45,7 +45,7 @@ The points that needs to be cover in autoroute session
 
 2. *dart run build_runner build --delete-conflicting-outputs*
 3. Create Screen like -Screen-A,B,C
-4. After that add  *(@RoutePage)* Annotation every page (Screen -A,B,C)
+4. After that add  *(@**RoutePage**)* Annotation every page (Screen -A,B,C)
 5. Now again Generate routes using dart run build_runner build --delete-conflicting-outputs command
 6. *Config app route to your main app*   
    {

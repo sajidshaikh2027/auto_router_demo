@@ -116,15 +116,17 @@ abstract class $MyAppRouter extends _i18.RootStackRouter {
       final queryParams = routeData.queryParams;
       final args = routeData.argsAs<RouteDetailsArgs>(
           orElse: () => RouteDetailsArgs(
-                query: queryParams.get('query'),
-                path: pathParams.optString('path'),
+                id: pathParams.optString('id'),
+                empNo: queryParams.optString('emp_no'),
+                name: queryParams.optString('name'),
               ));
       return _i18.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i12.ScreenDetails(
+          key: args.key,
           id: args.id,
-          query: args.query,
-          path: args.path,
+          empNo: args.empNo,
+          name: args.name,
         ),
       );
     },
@@ -341,19 +343,24 @@ class RouteC extends _i18.PageRouteInfo<void> {
 /// [_i12.ScreenDetails]
 class RouteDetails extends _i18.PageRouteInfo<RouteDetailsArgs> {
   RouteDetails({
+    _i19.Key? key,
     String? id,
-    Map<String, dynamic>? query,
-    String? path,
+    String? empNo,
+    String? name,
     List<_i18.PageRouteInfo>? children,
   }) : super(
           RouteDetails.name,
           args: RouteDetailsArgs(
+            key: key,
             id: id,
-            query: query,
-            path: path,
+            empNo: empNo,
+            name: name,
           ),
-          rawPathParams: {'path': path},
-          rawQueryParams: {'query': query},
+          rawPathParams: {'id': id},
+          rawQueryParams: {
+            'emp_no': empNo,
+            'name': name,
+          },
           initialChildren: children,
         );
 
@@ -365,20 +372,23 @@ class RouteDetails extends _i18.PageRouteInfo<RouteDetailsArgs> {
 
 class RouteDetailsArgs {
   const RouteDetailsArgs({
+    this.key,
     this.id,
-    this.query,
-    this.path,
+    this.empNo,
+    this.name,
   });
+
+  final _i19.Key? key;
 
   final String? id;
 
-  final Map<String, dynamic>? query;
+  final String? empNo;
 
-  final String? path;
+  final String? name;
 
   @override
   String toString() {
-    return 'RouteDetailsArgs{id: $id, query: $query, path: $path}';
+    return 'RouteDetailsArgs{key: $key, id: $id, empNo: $empNo, name: $name}';
   }
 }
 

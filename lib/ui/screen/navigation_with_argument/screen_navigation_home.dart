@@ -6,7 +6,7 @@ import '../../../services/navigations/app_router.gr.dart';
 
 @RoutePage()
 class ScreenNavigationHome extends StatelessWidget {
-   ScreenNavigationHome({super.key});
+  ScreenNavigationHome({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +14,12 @@ class ScreenNavigationHome extends StatelessWidget {
       backgroundColor: Colors.deepPurple,
       appBar: AppBar(
         title: const Text("Screen - NavigationHome",
-            style: TextStyle(fontSize: 22,color: Colors.black,
-            fontWeight:FontWeight.bold )),
+            style: TextStyle(
+                fontSize: 22,
+                color: Colors.black,
+                fontWeight: FontWeight.bold)),
       ),
-      body:
-      Center(
+      body: Center(
         child:
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -26,26 +27,42 @@ class ScreenNavigationHome extends StatelessWidget {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Passing argument
+                // Passing an argument directly
                 context.router.push(RouteDetails(id: '3333'));
               },
-              child: const Text('Go to Details Screen using Argument',style: TextStyle(fontSize: 18,color: Colors.black),)
+              child: const Text(
+                'Go to Details Screen using Path Parameter',
+                style: TextStyle(fontSize: 18, color: Colors.black),
+              ),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Passing query parameter
-                context.router.push(RouteDetails(query: const {'emp_no': '3333','name': 'Anil Thummar',}));
+                // Passing query parameters
+                context.router.push(RouteDetails(
+                  empNo: '3333',
+                  name: 'Anil Thummar',
+                ));
               },
-              child: const Text('Go to Details Screen using Query Parameter',style: TextStyle(fontSize: 18,color: Colors.black),)
+              child: const Text(
+                'Go to Details Screen using Query Parameters',
+                style: TextStyle(fontSize: 18, color: Colors.black),
+              ),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 // Passing path parameter
-                context.router.push(RouteDetails(path: '/details/3333'));
+                context.router.push(RouteDetails(
+                  id: '23333',
+                  empNo: '4444',
+                  name: 'John ',
+                ));
               },
-              child: const Text('Go to Details Screen using Path Parameter',style: TextStyle(fontSize: 18,color: Colors.black),)
+              child: const Text(
+                'Go to Details Screen using Path and Query Parameters',
+                style: TextStyle(fontSize: 18, color: Colors.black),
+              ),
             ),
           ],
         ),

@@ -18,7 +18,7 @@ class MyAppRouter extends $MyAppRouter {
           page: RouteC.page,
         ),
         AutoRoute(page: RouteNavigationHome.page),
-        AutoRoute(page: RouteDetails.page),
+        AutoRoute(page: RouteDetails.page,path: '/detail_page/:id',),
         AutoRoute(
           page: LoginRoute.page,
           path: AppPath.login,
