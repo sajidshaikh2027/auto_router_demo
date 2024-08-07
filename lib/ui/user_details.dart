@@ -10,8 +10,10 @@ class UserDetails extends StatefulWidget {
   const UserDetails({
     super.key,
     required this.user,
-    @pathParam this.id = 0, //path param
-    @queryParam this.query = 'none',
+    // @pathParam
+    this.id = 0, //path param
+    // @queryParam
+    this.query = 'none',
   });
 
   @override

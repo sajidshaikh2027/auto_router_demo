@@ -74,6 +74,23 @@ class MyAppRouter extends $MyAppRouter {
                   ])
             ]),
         CustomRoute(path: '/*', page: RouteNotFound.page),
+
+    AutoRoute(
+      page: AutoTabsScaffoldRoute.page,
+      children: [
+        AutoRoute(page: Tab1Route.page),
+        AutoRoute(page: Tab2Route.page),
+        AutoRoute(page: Tab3Route.page),
+      ],
+    ),
+    // CustomRoute(page: AutoTabsScaffoldRoute.page,
+    //     children: [
+    //       AutoRoute(page: Tab1Route.page),
+    //       AutoRoute(page: Tab2Route.page),
+    //       AutoRoute(page: Tab3Route.page),
+    //     ]
+    //     ),
+
         /*CustomRoute(
           page: AccountDetailsRoute.page,
           transitionsBuilder: TransitionsBuilders.zoomIn,

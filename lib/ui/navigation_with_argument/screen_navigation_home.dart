@@ -20,53 +20,60 @@ class ScreenNavigationHome extends StatelessWidget {
                 fontWeight: FontWeight.bold)),
       ),
       body: Center(
-        child:
-        Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(height: 20),
-            ElevatedButton(
+            _buildNavigationButton(
+              context: context,
               onPressed: () {
-                // Passing an argument directly
                 context.router.push(RouteDetails(id: '3333'));
               },
-              child: const Text(
-                'Go to Details Screen using Path Parameter',
-                style: TextStyle(fontSize: 18, color: Colors.black),
-              ),
+              text: 'Go to Details Screen using Argument',
             ),
-            const SizedBox(height: 20),
-            ElevatedButton(
+            _buildNavigationButton(
+              context: context,
               onPressed: () {
-                // Passing query parameters
                 context.router.push(RouteDetails(
                   empNo: '3333',
                   name: 'Anil Thummar',
                 ));
               },
-              child: const Text(
-                'Go to Details Screen using Query Parameters',
-                style: TextStyle(fontSize: 18, color: Colors.black),
-              ),
+              text: 'Go to Details Screen using Query Parameters',
             ),
-            const SizedBox(height: 20),
-            ElevatedButton(
+            _buildNavigationButton(
+              context: context,
               onPressed: () {
-                // Passing path parameter
                 context.router.push(RouteDetails(
-                  id: '23333',
+                  id: '123123',
                   empNo: '4444',
                   name: 'John ',
                 ));
               },
-              child: const Text(
-                'Go to Details Screen using Path and Query Parameters',
-                style: TextStyle(fontSize: 18, color: Colors.black),
-              ),
+              text: 'Go to Details Screen using Path and Query Parameters',
             ),
           ],
         ),
       ),
     );
   }
+}
+
+Widget _buildNavigationButton({
+  required BuildContext context,
+  required VoidCallback onPressed,
+  required String text,
+}) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(vertical: 10.0),
+    child: SizedBox(
+      width: double.infinity,
+      child: ElevatedButton(
+        onPressed: onPressed,
+        child: Text(
+          text,
+          style: const TextStyle(fontSize: 18, color: Colors.black),
+        ),
+      ),
+    ),
+  );
 }
