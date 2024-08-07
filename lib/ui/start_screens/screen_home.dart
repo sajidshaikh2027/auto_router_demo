@@ -70,15 +70,6 @@ class ScreenHome extends StatelessWidget {
             const SizedBox(
               height: 5,
             ),
-            ElevatedButton(
-              onPressed: () {
-                appRouter.push(RouteNavigationHome());
-              },
-              child: const Text(
-                "Route Guards",
-                style: TextStyle(fontSize: 18, color: Colors.black),
-              ),
-            ),
           ],
         ),
       ),
