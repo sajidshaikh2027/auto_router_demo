@@ -2,7 +2,7 @@ import '../../../utils/exports.dart';
 
 @RoutePage()
 class ScreenNavigationHome extends StatelessWidget {
-  ScreenNavigationHome({super.key});
+  const ScreenNavigationHome({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +16,7 @@ class ScreenNavigationHome extends StatelessWidget {
                 fontWeight: FontWeight.bold)),
       ),
       body: Center(
-        child:
-        Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const SizedBox(height: 20),
@@ -27,7 +26,7 @@ class ScreenNavigationHome extends StatelessWidget {
                 context.router.push(RouteDetails(id: '3333'));
               },
               child: const Text(
-                'Go to Details Screen using Path Parameter',
+                'Go to Details Screen using Argument',
                 style: TextStyle(fontSize: 18, color: Colors.black),
               ),
             ),

@@ -45,7 +45,7 @@ class ScreenDetails extends StatelessWidget {
               style: const TextStyle(fontSize: 18, color: Colors.black),
             ),
             const SizedBox(height: 10,),
-            Text('Parameter Query- Employee Number: ${empNo},Name: $name',
+            Text('Parameter Query- Employee Number: $empNo,Name: $name',
               style: const TextStyle(fontSize: 18, color: Colors.black),
             ),
             const SizedBox(
