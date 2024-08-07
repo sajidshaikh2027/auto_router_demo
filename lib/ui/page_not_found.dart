@@ -7,11 +7,20 @@ class PageNotFound extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      backgroundColor: Colors.red,
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        title: const Text("Screen - Details",
+            style: TextStyle(
+                fontSize: 22,
+                color: Colors.black,
+                fontWeight: FontWeight.bold)),
+        automaticallyImplyLeading: true,
+        leading: AutoLeadingButton(),
+
       ),
-      body: Center(
-        child: Text("Page not Found"),
+
+      body: const Center(
+        child: Text("Page not Found",style: const TextStyle(fontSize: 18, color: Colors.white,fontWeight: FontWeight.bold),),
       ),
     );
   }
