@@ -1,4 +1,4 @@
-import '../utils/exports.dart';
+import '../../utils/exports.dart';
 
 @RoutePage()
 class UserDetails extends StatefulWidget {
@@ -49,15 +49,6 @@ class _UserDetailsState extends State<UserDetails> {
             ),
             const SizedBox(height: 8),
             Text(widget.user.email, style: const TextStyle(fontSize: 18)),
-            Text('ID: ${widget.id}', style: const TextStyle(fontSize: 18)),
-            Text('Query: ${widget.query}',
-                style: const TextStyle(fontSize: 18)),
-            /*ElevatedButton(
-              onPressed: () {
-                context.router.maybePop(user);
-              },
-              child: Text('Return Result'),
-            ),*/
           ],
         ),
       ),

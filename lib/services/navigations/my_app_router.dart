@@ -1,3 +1,5 @@
+import 'package:auto_router_demo/ui/settings/tabs/pageview/page_view_one.dart';
+
 import '../../utils/exports.dart';
 import 'authentication_middleware.dart';
 
@@ -11,7 +13,6 @@ class MyAppRouter extends $MyAppRouter {
         ),
         AutoRoute(
           page: RouteA.page,
-          initial: false,
         ),
         AutoRoute(page: RouteB.page),
         CustomRoute(
@@ -22,7 +23,6 @@ class MyAppRouter extends $MyAppRouter {
         AutoRoute(
           page: LoginRoute.page,
           path: AppPath.login,
-          initial: false,
           guards: [AuthenticationMiddleWare()],
         ),
         CustomRoute(
@@ -31,23 +31,19 @@ class MyAppRouter extends $MyAppRouter {
             maintainState: false,
             children: [
               CustomRoute(
-                  page: HomeWithBottomRoute.page,
+                  page: HomeRoute.page,
                   path: AppPath.home,
-                  maintainState: true,
                   children: [
                     CustomRoute(
                       page: HomeRoute.page,
                     ),
                     CustomRoute(
                       page: UserDetails.page,
-                      title: (ctx, data) {
-                        return 'User Details Details ${data.pathParams.get('id')}';
-                      },
                       transitionsBuilder: TransitionsBuilders.zoomIn,
                     ),
                   ]),
               CustomRoute(
-                  page: AccountTabsRoute.page,
+                  page: AccountRoute.page,
                   path: AppPath.account,
                   children: [
                     CustomRoute(page: AccountRoute.page, maintainState: false),
@@ -69,34 +65,31 @@ class MyAppRouter extends $MyAppRouter {
                   children: [
                     AutoRoute(
                       page: ChatRoute.page,
+                      children: [
+                        AutoRoute(page: RouteViewOne.page, path: 'pageviewone'), // Define route
+
+                      ]
                     ),
                     AutoRoute(page: StatusRoute.page)
                   ])
             ]),
         CustomRoute(path: '/*', page: RouteNotFound.page),
-
-    AutoRoute(
-      page: AutoTabsScaffoldRoute.page,
-      children: [
-        AutoRoute(page: Tab1Route.page),
-        AutoRoute(page: Tab2Route.page),
-        AutoRoute(page: Tab3Route.page),
-      ],
-    ),
-    // CustomRoute(page: AutoTabsScaffoldRoute.page,
-    //     children: [
-    //       AutoRoute(page: Tab1Route.page),
-    //       AutoRoute(page: Tab2Route.page),
-    //       AutoRoute(page: Tab3Route.page),
-    //     ]
-    //     ),
-
-        /*CustomRoute(
+        CustomRoute(
           page: AccountDetailsRoute.page,
           transitionsBuilder: TransitionsBuilders.zoomIn,
           durationInMilliseconds: 200,
-        ),*/
-      ];
+        ),
+      AutoRoute(
+        page: AutoTabsScaffoldRoute.page,
+        children: [
+          AutoRoute(page: Tab1Route.page),
+          AutoRoute(page: Tab2Route.page),
+          AutoRoute(page: Tab3Route.page),
+        ])
+
+
+
+  ];
 }
 
 @RoutePage()

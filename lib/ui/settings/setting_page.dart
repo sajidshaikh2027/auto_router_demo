@@ -1,4 +1,4 @@
-import '../utils/exports.dart';
+import '../../utils/exports.dart';
 
 @RoutePage()
 class SettingPage extends StatelessWidget {
@@ -9,9 +9,9 @@ class SettingPage extends StatelessWidget {
     return AutoTabsRouter.tabBar(
         routes: const [ChatRoute(), StatusRoute()],
         builder: (context, child, controller) {
-          //final tabsRouter = AutoTabsRouter.of(context);
           return Scaffold(
             appBar: AppBar(
+              automaticallyImplyLeading: false,
               title: const Text("Text"),
               centerTitle: true,
               bottom: TabBar(controller: controller, tabs: const [

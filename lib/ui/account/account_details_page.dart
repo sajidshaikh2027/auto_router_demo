@@ -1,4 +1,4 @@
-import '../utils/exports.dart';
+import '../../utils/exports.dart';
 
 @RoutePage()
 class AccountDetailsPage extends StatelessWidget {
@@ -7,6 +7,9 @@ class AccountDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: AutoLeadingButton(),
+      ),
       body: const Center(
         child: Text("Account details screen"),
       ),
