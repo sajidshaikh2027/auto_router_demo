@@ -33,8 +33,9 @@ import 'package:auto_router_demo/ui/settings/tabs/chat_page.dart' as _i5;
 import 'package:auto_router_demo/ui/settings/tabs/pageview/page_view_one.dart'
     as _i11;
 import 'package:auto_router_demo/ui/settings/tabs/status_page.dart' as _i19;
-import 'package:auto_router_demo/ui/simple_navigation/screen_a.dart' as _i12;
 import 'package:auto_router_demo/ui/start_screens/screen_home.dart' as _i16;
+import 'package:auto_router_demo/ui/start_screens/simple_navigation/screen_a.dart'
+    as _i12;
 import 'package:auto_router_demo/ui/start_screens/simple_navigation/screen_b.dart'
     as _i13;
 import 'package:auto_router_demo/ui/start_screens/simple_navigation/screen_c.dart'
@@ -104,12 +105,12 @@ abstract class $MyAppRouter extends _i24.RootStackRouter {
     RouteFound.name: (routeData) {
       final pathParams = routeData.inheritedPathParams;
       final args = routeData.argsAs<RouteFoundArgs>(
-          orElse: () => RouteFoundArgs(id: pathParams.getString('userId')));
+          orElse: () => RouteFoundArgs(userId: pathParams.getString('userId')));
       return _i24.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i9.PageFound(
           key: args.key,
-          userId: args.id,
+          userId: args.userId,
         ),
       );
     },
@@ -355,15 +356,15 @@ class LoginRoute extends _i24.PageRouteInfo<void> {
 class RouteFound extends _i24.PageRouteInfo<RouteFoundArgs> {
   RouteFound({
     _i25.Key? key,
-    required String id,
+    required String userId,
     List<_i24.PageRouteInfo>? children,
   }) : super(
           RouteFound.name,
           args: RouteFoundArgs(
             key: key,
-            id: id,
+            userId: userId,
           ),
-          rawPathParams: {'id': id},
+          rawPathParams: {'userId': userId},
           initialChildren: children,
         );
 
@@ -376,16 +377,16 @@ class RouteFound extends _i24.PageRouteInfo<RouteFoundArgs> {
 class RouteFoundArgs {
   const RouteFoundArgs({
     this.key,
-    required this.id,
+    required this.userId,
   });
 
   final _i25.Key? key;
 
-  final String id;
+  final String userId;
 
   @override
   String toString() {
-    return 'RouteFoundArgs{key: $key, id: $id}';
+    return 'RouteFoundArgs{key: $key, userId: $userId}';
   }
 }
 
