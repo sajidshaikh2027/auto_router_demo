@@ -32,10 +32,13 @@ import 'package:auto_router_demo/ui/settings/tabs/chat_page.dart' as _i5;
 import 'package:auto_router_demo/ui/settings/tabs/pageview/page_view_one.dart'
     as _i10;
 import 'package:auto_router_demo/ui/settings/tabs/status_page.dart' as _i18;
-import 'package:auto_router_demo/ui/simple_navigation/screen_a.dart' as _i11;
-import 'package:auto_router_demo/ui/simple_navigation/screen_b.dart' as _i12;
-import 'package:auto_router_demo/ui/simple_navigation/screen_c.dart' as _i13;
 import 'package:auto_router_demo/ui/start_screens/screen_home.dart' as _i15;
+import 'package:auto_router_demo/ui/start_screens/simple_navigation/screen_a.dart'
+    as _i11;
+import 'package:auto_router_demo/ui/start_screens/simple_navigation/screen_b.dart'
+    as _i12;
+import 'package:auto_router_demo/ui/start_screens/simple_navigation/screen_c.dart'
+    as _i13;
 import 'package:auto_router_demo/utils/exports.dart' as _i25;
 import 'package:flutter/material.dart' as _i24;
 
@@ -159,11 +162,9 @@ abstract class $MyAppRouter extends _i23.RootStackRouter {
       );
     },
     RouteNavigationHome.name: (routeData) {
-      final args = routeData.argsAs<RouteNavigationHomeArgs>(
-          orElse: () => const RouteNavigationHomeArgs());
       return _i23.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i16.ScreenNavigationHome(key: args.key),
+        child: const _i16.ScreenNavigationHome(),
       );
     },
     SettingRoute.name: (routeData) {
@@ -505,31 +506,16 @@ class RouteHome extends _i23.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i16.ScreenNavigationHome]
-class RouteNavigationHome extends _i23.PageRouteInfo<RouteNavigationHomeArgs> {
-  RouteNavigationHome({
-    _i25.Key? key,
-    List<_i23.PageRouteInfo>? children,
-  }) : super(
+class RouteNavigationHome extends _i23.PageRouteInfo<void> {
+  const RouteNavigationHome({List<_i23.PageRouteInfo>? children})
+      : super(
           RouteNavigationHome.name,
-          args: RouteNavigationHomeArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'RouteNavigationHome';
 
-  static const _i23.PageInfo<RouteNavigationHomeArgs> page =
-      _i23.PageInfo<RouteNavigationHomeArgs>(name);
-}
-
-class RouteNavigationHomeArgs {
-  const RouteNavigationHomeArgs({this.key});
-
-  final _i25.Key? key;
-
-  @override
-  String toString() {
-    return 'RouteNavigationHomeArgs{key: $key}';
-  }
+  static const _i23.PageInfo<void> page = _i23.PageInfo<void>(name);
 }
 
 /// generated route for

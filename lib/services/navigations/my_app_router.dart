@@ -57,7 +57,7 @@ class MyAppRouter extends $MyAppRouter {
                   page: AccountRoute.page,
                   path: AppPath.account,
                   maintainState: false,
-                  initial: true),
+                  ),
               AutoRoute(
                   page: SettingRoute.page,
                   path: AppPath.setting,
