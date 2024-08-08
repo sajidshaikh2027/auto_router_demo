@@ -43,18 +43,6 @@ class MyAppRouter extends $MyAppRouter {
                 ),
               ]),
               CustomRoute(
-                  page: AccountRoute.page,
-                  path: AppPath.account,
-                  children: [
-                    CustomRoute(page: AccountRoute.page, maintainState: false),
-                    CustomRoute(
-                      page: AccountDetailsRoute.page,
-                      maintainState: false,
-                      transitionsBuilder: TransitionsBuilders.zoomIn,
-                      durationInMilliseconds: 200,
-                    ),
-                  ]),
-              CustomRoute(
                 page: AccountRoute.page,
                 path: AppPath.account,
                 maintainState: false,

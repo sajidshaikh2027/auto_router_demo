@@ -21,28 +21,28 @@ class ScreenHome extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 10),
-            _buildNavigationButton(
+            buildNavigationButton(
               context: context,
               onPressed: () {
                 context.router.push(const RouteA());
               },
               text: "Navigation between two Screens",
             ),
-            _buildNavigationButton(
+            buildNavigationButton(
               context: context,
               onPressed: () {
                 context.router.push(RouteNavigationHome());
               },
               text: "Navigation With different Argument",
             ),
-            _buildNavigationButton(
+            buildNavigationButton(
               context: context,
               onPressed: () {
                 appRouter.push(const LoginRoute());
               },
               text: "Context Less Navigation",
             ),
-            _buildNavigationButton(
+            buildNavigationButton(
               context: context,
               onPressed: () {
                 appRouter.push(const RouteNotFound());
@@ -50,21 +50,21 @@ class ScreenHome extends StatelessWidget {
               text: "Wildcards - Page not Found",
             ),
 
-            _buildNavigationButton(
+            buildNavigationButton(
               context: context,
               onPressed: () {
                 appRouter.push(const AutoTabsScaffoldRoute());
               },
               text: "AutoTabsScaffold",
             ),
-            _buildNavigationButton(
+            buildNavigationButton(
               context: context,
               onPressed: () {
                 appRouter.push(const NonAdminRoute());
               },
               text: "Route Guards",
             ),
-            _buildNavigationButton(
+            buildNavigationButton(
               context: context,
               onPressed: () {
                 appRouter.push(const NonAdminRoute());
@@ -78,7 +78,7 @@ class ScreenHome extends StatelessWidget {
     );
   }
 }
-Widget _buildNavigationButton({
+Widget buildNavigationButton({
   required BuildContext context,
   required VoidCallback onPressed,
   required String text,

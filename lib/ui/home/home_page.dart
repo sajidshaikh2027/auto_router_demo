@@ -1,5 +1,6 @@
 import '../../utils/exports.dart';
 
+
 @RoutePage()
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -53,6 +54,20 @@ class _HomePageState extends State<HomePage> {
                     },
                   ),
           ),
+
+
+          /*If user switch new tab bottom view*/
+          /*buildNavigationButton(
+            context: context,
+            onPressed: () {
+              context.navigateTo(const AccountRoute(
+                children: [
+                  AccountDetailsRoute()
+                ]
+              ));
+            },
+            text: "Cross-tab Navigation",
+          ),*/
         ],
       ),
     );

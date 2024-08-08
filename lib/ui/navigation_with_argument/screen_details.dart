@@ -10,11 +10,11 @@ class ScreenDetails extends StatelessWidget {
   final String? name;
 
   const ScreenDetails({
-    Key? key,
+    super.key,
     @PathParam('id') this.id, // Extracts 'id' from the path
     @QueryParam('emp_no') this.empNo, // Extracts 'emp_no' from query parameters
     @QueryParam('name') this.name, // Extracts 'name' from query parameters
-  }) : super(key: key);
+  });
 
   // ScreenDetails({
   //   @pathParam this.id = '1111', // Default path parameter with a default value

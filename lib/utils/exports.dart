@@ -22,3 +22,5 @@ export 'package:auto_router_demo/services/storage/shared_pref.dart';
 
 export '../../utils/user_role_enum.dart';
 
+export 'package:auto_router_demo/ui/start_screens/screen_home.dart';
+
