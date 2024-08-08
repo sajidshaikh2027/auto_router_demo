@@ -1,5 +1,5 @@
-import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
+
+import '../../utils/exports.dart';
 
 @RoutePage()
 class Tab2Page extends StatelessWidget {
@@ -10,8 +10,16 @@ class Tab2Page extends StatelessWidget {
     return Scaffold(
       appBar:  AppBar(
         centerTitle: true,
-        automaticallyImplyLeading: false,
-        // leading: const AutoLeadingButton(),
+        leading:  AutoLeadingButton(
+            builder: (context, leadingType, action) {
+              return IconButton(
+                icon: const Icon(Icons.arrow_back),
+                onPressed: () {
+                  appRouter.back();
+                },
+              );
+            }
+        ),
       ),
       body: const Center(child: Text('Content of Tab 2')),
     );

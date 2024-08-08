@@ -1,6 +1,6 @@
 import '../../utils/exports.dart';
 
-@RoutePage()
+@RoutePage(deferredLoading: true)
 class PageNotFound extends StatelessWidget {
   const PageNotFound({super.key});
 

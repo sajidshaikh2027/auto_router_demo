@@ -16,40 +16,37 @@ class ScreenNavigationHome extends StatelessWidget {
                 color: Colors.black,
                 fontWeight: FontWeight.bold)),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            _buildNavigationButton(
-              context: context,
-              onPressed: () {
-                context.router.push(RouteDetails(id: '3333'));
-              },
-              text: 'Go to Details Screen using Argument',
-            ),
-            _buildNavigationButton(
-              context: context,
-              onPressed: () {
-                context.router.push(RouteDetails(
-                  empNo: '3333',
-                  name: 'Anil Thummar',
-                ));
-              },
-              text: 'Go to Details Screen using Query Parameters',
-            ),
-            _buildNavigationButton(
-              context: context,
-              onPressed: () {
-                context.router.push(RouteDetails(
-                  id: '123123',
-                  empNo: '4444',
-                  name: 'John ',
-                ));
-              },
-              text: 'Go to Details Screen using Path and Query Parameters',
-            ),
-          ],
-        ),
+      body: Column(
+        children: [
+          _buildNavigationButton(
+            context: context,
+            onPressed: () {
+              context.router.push(RouteDetails(id: '3333'));
+            },
+            text: 'Go to Details Screen using Argument',
+          ),
+          _buildNavigationButton(
+            context: context,
+            onPressed: () {
+              context.router.push(RouteDetails(
+                empNo: '3333',
+                name: 'Anil Thummar',
+              ));
+            },
+            text: 'Go to Details Screen using Query Parameters',
+          ),
+          _buildNavigationButton(
+            context: context,
+            onPressed: () {
+              context.router.push(RouteDetails(
+                id: '123123',
+                empNo: '4444',
+                name: 'John ',
+              ));
+            },
+            text: 'Go to Details Screen using Path and Query Parameters',
+          ),
+        ],
       ),
     );
   }

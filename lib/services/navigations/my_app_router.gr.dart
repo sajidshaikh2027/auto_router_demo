@@ -27,7 +27,8 @@ import 'package:auto_router_demo/ui/navigation_with_argument/screen_details.dart
 import 'package:auto_router_demo/ui/navigation_with_argument/screen_navigation_home.dart'
     as _i17;
 import 'package:auto_router_demo/ui/page_not_found/page_found.dart' as _i9;
-import 'package:auto_router_demo/ui/page_not_found/page_not_found.dart' as _i10;
+import 'package:auto_router_demo/ui/page_not_found/page_not_found.dart'
+    deferred as _i10;
 import 'package:auto_router_demo/ui/settings/setting_page.dart' as _i18;
 import 'package:auto_router_demo/ui/settings/tabs/chat_page.dart' as _i5;
 import 'package:auto_router_demo/ui/settings/tabs/pageview/page_view_one.dart'
@@ -102,10 +103,11 @@ abstract class $MyAppRouter extends _i24.RootStackRouter {
         child: const _i8.LoginPage(),
       );
     },
-    RouteFound.name: (routeData) {
+    PageFoundRoute.name: (routeData) {
       final pathParams = routeData.inheritedPathParams;
-      final args = routeData.argsAs<RouteFoundArgs>(
-          orElse: () => RouteFoundArgs(userId: pathParams.getString('userId')));
+      final args = routeData.argsAs<PageFoundRouteArgs>(
+          orElse: () =>
+              PageFoundRouteArgs(userId: pathParams.getString('userId')));
       return _i24.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i9.PageFound(
@@ -117,7 +119,10 @@ abstract class $MyAppRouter extends _i24.RootStackRouter {
     RouteNotFound.name: (routeData) {
       return _i24.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i10.PageNotFound(),
+        child: _i24.DeferredWidget(
+          _i10.loadLibrary,
+          () => _i10.PageNotFound(),
+        ),
       );
     },
     RouteViewOne.name: (routeData) {
@@ -353,14 +358,14 @@ class LoginRoute extends _i24.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i9.PageFound]
-class RouteFound extends _i24.PageRouteInfo<RouteFoundArgs> {
-  RouteFound({
+class PageFoundRoute extends _i24.PageRouteInfo<PageFoundRouteArgs> {
+  PageFoundRoute({
     _i25.Key? key,
     required String userId,
     List<_i24.PageRouteInfo>? children,
   }) : super(
-          RouteFound.name,
-          args: RouteFoundArgs(
+          PageFoundRoute.name,
+          args: PageFoundRouteArgs(
             key: key,
             userId: userId,
           ),
@@ -368,14 +373,14 @@ class RouteFound extends _i24.PageRouteInfo<RouteFoundArgs> {
           initialChildren: children,
         );
 
-  static const String name = 'RouteFound';
+  static const String name = 'PageFoundRoute';
 
-  static const _i24.PageInfo<RouteFoundArgs> page =
-      _i24.PageInfo<RouteFoundArgs>(name);
+  static const _i24.PageInfo<PageFoundRouteArgs> page =
+      _i24.PageInfo<PageFoundRouteArgs>(name);
 }
 
-class RouteFoundArgs {
-  const RouteFoundArgs({
+class PageFoundRouteArgs {
+  const PageFoundRouteArgs({
     this.key,
     required this.userId,
   });
@@ -386,7 +391,7 @@ class RouteFoundArgs {
 
   @override
   String toString() {
-    return 'RouteFoundArgs{key: $key, userId: $userId}';
+    return 'PageFoundRouteArgs{key: $key, userId: $userId}';
   }
 }
 

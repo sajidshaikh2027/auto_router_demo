@@ -29,7 +29,7 @@ class ScreenDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     print("current_name ScreenDetails : ${appRouter.current.path}");
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.yellow,
       appBar: AppBar(
         title: const Text("Screen - Details",
             style: TextStyle(
@@ -37,30 +37,42 @@ class ScreenDetails extends StatelessWidget {
                 color: Colors.black,
                 fontWeight: FontWeight.bold)),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Argument-: ID: $id',
-              style: const TextStyle(fontSize: 18, color: Colors.black),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(height: 20),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: Text(
+              'Argument-: ID: ${id ?? ''}',
+              style: const TextStyle(fontSize: 22, color: Colors.black),
             ),
-            const SizedBox(
-              height: 10,
+          ),
+          const SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: Text(
+              'Parameter Query- Employee Number: ${empNo ??''}',
+              style: const TextStyle(fontSize: 22, color: Colors.black),
             ),
-            Text(
-              'Parameter Query- Employee Number: $empNo,Name: $name',
-              style: const TextStyle(fontSize: 18, color: Colors.black),
+          ),
+          const SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: Text(
+              'Parameter Query- EmployeeName: ${name??''}',
+              style: const TextStyle(fontSize: 22, color: Colors.black),
             ),
-            const SizedBox(
-              height: 10,
+          ),
+          const SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: Text(
+              'Path Parameter-: ${name??''}',
+              style: const TextStyle(fontSize: 22, color: Colors.black),
             ),
-            Text(
-              'Path Parameter- : $name',
-              style: const TextStyle(fontSize: 18, color: Colors.black),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

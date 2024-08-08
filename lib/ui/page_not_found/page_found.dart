@@ -1,7 +1,7 @@
 import '../../utils/exports.dart';
 
 
-@RoutePage()
+@RoutePage(name: 'PageFoundRoute')
 class PageFound extends StatelessWidget {
 
   final String userId;
