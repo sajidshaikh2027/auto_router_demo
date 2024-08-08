@@ -71,7 +71,7 @@ class MyAppRouter extends $MyAppRouter {
             ]),
         CustomRoute(path: '/*', page: RouteNotFound.page),
 
-        AutoRoute(path: '/pagefound/:userId',page: PageFoundRoute.page,),
+        AutoRoute(path: '/PageFoundRoute/:id',page: PageFoundRoute.page,),
         CustomRoute(
           page: AccountDetailsRoute.page,
           transitionsBuilder: TransitionsBuilders.zoomIn,

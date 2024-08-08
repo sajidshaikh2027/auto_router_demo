@@ -52,10 +52,25 @@ class ScreenHome extends StatelessWidget {
             _buildNavigationButton(
               context: context,
               onPressed: () {
+                    context.router.pushNamed('/PageFoundRoute/123');
+              },
+              text: "Wildcards-Page Found",
+            ),
+            _buildNavigationButton(
+              context: context,
+              onPressed: () {
                 appRouter.push(const AutoTabsScaffoldRoute());
               },
               text: "AutoTabsScaffold",
             ),
+            _buildNavigationButton(
+              context: context,
+              onPressed: () {
+                appRouter.push(const AutoTabsScaffoldRoute());
+              },
+              text: "Route Guards",
+            ),
+
           ],
         ),
       ),
