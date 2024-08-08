@@ -10,7 +10,6 @@ class LoginPage extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
             onPressed: () {
-              print("object");
               SharedPref.setBool("isLoggedInKey", true);
               context.router.replace(const Dashboard());
             },
