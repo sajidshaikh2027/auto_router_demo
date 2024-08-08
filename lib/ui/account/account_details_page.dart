@@ -8,7 +8,7 @@ class AccountDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: AutoLeadingButton(),
+        leading: const AutoLeadingButton(),
       ),
       body: const Center(
         child: Text("Account details screen"),

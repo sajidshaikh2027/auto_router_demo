@@ -1,5 +1,4 @@
 import 'package:auto_router_demo/ui/settings/tabs/widget/simple_card.dart';
-import 'package:flutter/gestures.dart';
 import '../../../utils/exports.dart';
 
 @RoutePage()
@@ -8,7 +7,6 @@ class ChatPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     // PageController pageController = PageController();
 
     final List<CardData> cardDataList = [

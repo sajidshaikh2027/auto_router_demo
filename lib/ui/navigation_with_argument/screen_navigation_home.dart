@@ -3,7 +3,7 @@ import '../../utils/exports.dart';
 
 @RoutePage()
 class ScreenNavigationHome extends StatelessWidget {
-  ScreenNavigationHome({super.key});
+  const ScreenNavigationHome({super.key});
 
   @override
   Widget build(BuildContext context) {

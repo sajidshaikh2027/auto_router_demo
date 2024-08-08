@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 
 @RoutePage()
 class ScreenDetails extends StatelessWidget {
-
   final String? id;
   final String? empNo;
   final String? name;
@@ -16,7 +15,6 @@ class ScreenDetails extends StatelessWidget {
     @QueryParam('emp_no') this.empNo, // Extracts 'emp_no' from query parameters
     @QueryParam('name') this.name, // Extracts 'name' from query parameters
   }) : super(key: key);
-
 
   // ScreenDetails({
   //   @pathParam this.id = '1111', // Default path parameter with a default value
@@ -43,12 +41,15 @@ class ScreenDetails extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-
-            Text('Argument-: ID: $id',
+            Text(
+              'Argument-: ID: $id',
               style: const TextStyle(fontSize: 18, color: Colors.black),
             ),
-            const SizedBox(height: 10,),
-            Text('Parameter Query- Employee Number: ${empNo},Name: $name',
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              'Parameter Query- Employee Number: $empNo,Name: $name',
               style: const TextStyle(fontSize: 18, color: Colors.black),
             ),
             const SizedBox(

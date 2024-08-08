@@ -27,7 +27,7 @@ class SimpleCard extends StatelessWidget {
               title,
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-         const SizedBox(height: 8),
+            const SizedBox(height: 8),
             Text(
               description,
               style: const TextStyle(fontSize: 16),
@@ -39,7 +39,6 @@ class SimpleCard extends StatelessWidget {
     );
   }
 }
-
 
 class CardData {
   final String title;

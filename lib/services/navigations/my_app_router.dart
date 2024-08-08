@@ -1,4 +1,3 @@
-import 'package:auto_router_demo/ui/settings/tabs/pageview/page_view_one.dart';
 
 import '../../utils/exports.dart';
 import 'authentication_middleware.dart';

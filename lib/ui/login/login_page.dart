@@ -1,4 +1,3 @@
-import '../../services/storage/shared_pref.dart';
 import '../../utils/exports.dart';
 
 @RoutePage()
@@ -13,7 +12,7 @@ class LoginPage extends StatelessWidget {
             onPressed: () {
               print("object");
               SharedPref.setBool("isLoggedInKey", true);
-              context.router.replace(Dashboard());
+              context.router.replace(const Dashboard());
             },
             child: const Text("Login button")),
       ),
