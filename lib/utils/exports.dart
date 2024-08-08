@@ -19,3 +19,6 @@ export 'package:auto_router_demo/services/observer/my_observer.dart';
 export '../../main.dart';
 
 export 'package:auto_router_demo/services/storage/shared_pref.dart';
+
+export '../../utils/userRoleEnum.dart';
+

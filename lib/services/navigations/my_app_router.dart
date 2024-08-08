@@ -1,3 +1,5 @@
+import 'package:auto_router_demo/services/navigations/role_base_guard.dart';
+
 import '../../utils/exports.dart';
 import 'authentication_middleware.dart';
 
@@ -53,10 +55,10 @@ class MyAppRouter extends $MyAppRouter {
                     ),
                   ]),
               CustomRoute(
-                  page: AccountRoute.page,
-                  path: AppPath.account,
-                  maintainState: false,
-                  ),
+                page: AccountRoute.page,
+                path: AppPath.account,
+                maintainState: false,
+              ),
               AutoRoute(
                   page: SettingRoute.page,
                   path: AppPath.setting,
@@ -71,7 +73,6 @@ class MyAppRouter extends $MyAppRouter {
             ]),
         CustomRoute(path: '/*', page: RouteNotFound.page),
 
-        AutoRoute(path: '/PageFoundRoute/:id',page: PageFoundRoute.page,),
         CustomRoute(
           page: AccountDetailsRoute.page,
           transitionsBuilder: TransitionsBuilders.zoomIn,
@@ -82,6 +83,13 @@ class MyAppRouter extends $MyAppRouter {
           AutoRoute(page: Tab2Route.page),
           AutoRoute(page: Tab3Route.page),
         ]),
+        AutoRoute(
+          page: NonAdminRoute.page,
+          guards: [RoleBaseGuard(UserRole.guest)],
+        ),
+        AutoRoute(
+          page: GuestRoute.page,
+        ),
       ];
 }
 

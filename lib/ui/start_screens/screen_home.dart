@@ -49,13 +49,7 @@ class ScreenHome extends StatelessWidget {
               },
               text: "Wildcards - Page not Found",
             ),
-            _buildNavigationButton(
-              context: context,
-              onPressed: () {
-                    context.router.pushNamed('/PageFoundRoute/123');
-              },
-              text: "Wildcards-Page Found",
-            ),
+
             _buildNavigationButton(
               context: context,
               onPressed: () {
@@ -63,6 +57,21 @@ class ScreenHome extends StatelessWidget {
               },
               text: "AutoTabsScaffold",
             ),
+            _buildNavigationButton(
+              context: context,
+              onPressed: () {
+                appRouter.push(const NonAdminRoute());
+              },
+              text: "Route Guards",
+            ),
+            _buildNavigationButton(
+              context: context,
+              onPressed: () {
+                appRouter.push(const NonAdminRoute());
+              },
+              text: "Route Guards",
+            ),
+
           ],
         ),
       ),
