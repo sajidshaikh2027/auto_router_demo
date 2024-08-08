@@ -85,7 +85,7 @@ class MyAppRouter extends $MyAppRouter {
         ]),
         AutoRoute(
           page: NonAdminRoute.page,
-          guards: [RoleBaseGuard(UserRole.guest)],
+          guards: [RoleBaseGuard(UserRole.user)],
         ),
         AutoRoute(
           page: GuestRoute.page,
