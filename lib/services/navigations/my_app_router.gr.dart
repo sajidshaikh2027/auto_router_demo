@@ -99,7 +99,7 @@ abstract class $MyAppRouter extends _i25.RootStackRouter {
         child: const _i8.HomePage(),
       );
     },
-    HomeWithBottomRoute.name: (routeData) {
+    HomeWithBottomPageRoute.name: (routeData) {
       return _i25.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i3.HomeWithBottomPage(),
@@ -146,7 +146,7 @@ abstract class $MyAppRouter extends _i25.RootStackRouter {
     RouteB.name: (routeData) {
       return _i25.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i14.ScreenB(),
+        child: _i25.WrappedRoute(child: const _i14.ScreenB()),
       );
     },
     RouteC.name: (routeData) {
@@ -223,8 +223,6 @@ abstract class $MyAppRouter extends _i25.RootStackRouter {
         child: _i24.UserDetails(
           key: args.key,
           user: args.user,
-          id: args.id,
-          query: args.query,
         ),
       );
     },
@@ -345,14 +343,14 @@ class HomeRoute extends _i25.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i3.HomeWithBottomPage]
-class HomeWithBottomRoute extends _i25.PageRouteInfo<void> {
-  const HomeWithBottomRoute({List<_i25.PageRouteInfo>? children})
+class HomeWithBottomPageRoute extends _i25.PageRouteInfo<void> {
+  const HomeWithBottomPageRoute({List<_i25.PageRouteInfo>? children})
       : super(
-          HomeWithBottomRoute.name,
+          HomeWithBottomPageRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'HomeWithBottomRoute';
+  static const String name = 'HomeWithBottomPageRoute';
 
   static const _i25.PageInfo<void> page = _i25.PageInfo<void>(name);
 }
@@ -641,16 +639,12 @@ class UserDetails extends _i25.PageRouteInfo<UserDetailsArgs> {
   UserDetails({
     _i27.Key? key,
     required _i27.Datum user,
-    int id = 0,
-    String query = 'none',
     List<_i25.PageRouteInfo>? children,
   }) : super(
           UserDetails.name,
           args: UserDetailsArgs(
             key: key,
             user: user,
-            id: id,
-            query: query,
           ),
           initialChildren: children,
         );
@@ -665,20 +659,14 @@ class UserDetailsArgs {
   const UserDetailsArgs({
     this.key,
     required this.user,
-    this.id = 0,
-    this.query = 'none',
   });
 
   final _i27.Key? key;
 
   final _i27.Datum user;
 
-  final int id;
-
-  final String query;
-
   @override
   String toString() {
-    return 'UserDetailsArgs{key: $key, user: $user, id: $id, query: $query}';
+    return 'UserDetailsArgs{key: $key, user: $user}';
   }
 }
