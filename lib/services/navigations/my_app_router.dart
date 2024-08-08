@@ -31,7 +31,7 @@ class MyAppRouter extends $MyAppRouter {
             path: AppPath.dashboard,
             maintainState: false,
             children: [
-              CustomRoute(page: HomeRoute.page, path: AppPath.home, children: [
+              CustomRoute(page: HomeWithBottomPageRoute.page, path: AppPath.home, children: [
                 CustomRoute(
                   page: HomeRoute.page,
                 ),
@@ -90,7 +90,7 @@ class AccountTabsPage extends AutoRouter {
   const AccountTabsPage({super.key});
 }
 
-@RoutePage()
+@RoutePage(name: "HomeWithBottomPageRoute")
 class HomeWithBottomPage extends AutoRouter {
   const HomeWithBottomPage({super.key});
 }

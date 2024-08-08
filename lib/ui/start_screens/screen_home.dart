@@ -63,14 +63,6 @@ class ScreenHome extends StatelessWidget {
               },
               text: "AutoTabsScaffold",
             ),
-            _buildNavigationButton(
-              context: context,
-              onPressed: () {
-                appRouter.push(const AutoTabsScaffoldRoute());
-              },
-              text: "Route Guards",
-            ),
-
           ],
         ),
       ),

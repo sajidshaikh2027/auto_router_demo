@@ -38,8 +38,7 @@ class _HomePageState extends State<HomePage> {
                         child: ListTile(
                           onTap: () async {
                             print("on tap");
-                            var result = await context.router
-                                .push(UserDetails(user: user));
+                            var result = await context.router.push(UserDetails(user: user));
                             // Handle the result
                             if (result != null && result is Datum) {
                               print(

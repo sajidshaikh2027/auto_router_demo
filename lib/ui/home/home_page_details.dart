@@ -4,16 +4,16 @@ import '../../utils/exports.dart';
 class UserDetails extends StatefulWidget {
   final Datum user;
 
-  final int id;
-  final String query;
+  /*final int id;
+  final String query;*/
 
   const UserDetails({
     super.key,
     required this.user,
     // @pathParam
-    this.id = 0, //path param
+   /* this.id = 0, //path param
     // @queryParam
-    this.query = 'none',
+    this.query = 'none',*/
   });
 
   @override
