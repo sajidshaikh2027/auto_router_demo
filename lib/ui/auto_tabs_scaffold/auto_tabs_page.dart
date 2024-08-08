@@ -14,8 +14,6 @@ class AutoTabsScaffoldPage extends StatelessWidget {
         ],
       appBarBuilder: (context, tabsRouter) => AppBar(
         centerTitle: true,
-        automaticallyImplyLeading: true,
-        leading: const AutoLeadingButton(),
         title: const Text('Tabs Example',
             style: TextStyle(
                 fontSize: 22,
