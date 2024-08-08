@@ -1,4 +1,3 @@
-
 import '../../utils/exports.dart';
 import 'authentication_middleware.dart';
 
@@ -18,7 +17,10 @@ class MyAppRouter extends $MyAppRouter {
           page: RouteC.page,
         ),
         AutoRoute(page: RouteNavigationHome.page),
-        AutoRoute(page: RouteDetails.page,path: '/detail_page/:id',),
+        AutoRoute(
+          page: RouteDetails.page,
+          path: '/detail_page/:id',
+        ),
         AutoRoute(
           page: LoginRoute.page,
           path: AppPath.login,
@@ -29,18 +31,15 @@ class MyAppRouter extends $MyAppRouter {
             path: AppPath.dashboard,
             maintainState: false,
             children: [
-              CustomRoute(
+              CustomRoute(page: HomeRoute.page, path: AppPath.home, children: [
+                CustomRoute(
                   page: HomeRoute.page,
-                  path: AppPath.home,
-                  children: [
-                    CustomRoute(
-                      page: HomeRoute.page,
-                    ),
-                    CustomRoute(
-                      page: UserDetails.page,
-                      transitionsBuilder: TransitionsBuilders.zoomIn,
-                    ),
-                  ]),
+                ),
+                CustomRoute(
+                  page: UserDetails.page,
+                  transitionsBuilder: TransitionsBuilders.zoomIn,
+                ),
+              ]),
               CustomRoute(
                   page: AccountRoute.page,
                   path: AppPath.account,
@@ -62,33 +61,28 @@ class MyAppRouter extends $MyAppRouter {
                   page: SettingRoute.page,
                   path: AppPath.setting,
                   children: [
-                    AutoRoute(
-                      page: ChatRoute.page,
-                      children: [
-                        AutoRoute(page: RouteViewOne.page, path: 'pageviewone'), // Define route
-
-                      ]
-                    ),
+                    AutoRoute(page: ChatRoute.page, children: [
+                      AutoRoute(
+                          page: RouteViewOne.page,
+                          path: 'pageviewone'), // Define route
+                    ]),
                     AutoRoute(page: StatusRoute.page)
                   ])
             ]),
         CustomRoute(path: '/*', page: RouteNotFound.page),
+
+        AutoRoute(path: '/pagefound/:id',page: RouteFound.page,),
         CustomRoute(
           page: AccountDetailsRoute.page,
           transitionsBuilder: TransitionsBuilders.zoomIn,
           durationInMilliseconds: 200,
         ),
-      AutoRoute(
-        page: AutoTabsScaffoldRoute.page,
-        children: [
+        AutoRoute(page: AutoTabsScaffoldRoute.page, children: [
           AutoRoute(page: Tab1Route.page),
           AutoRoute(page: Tab2Route.page),
           AutoRoute(page: Tab3Route.page),
-        ])
-
-
-
-  ];
+        ]),
+      ];
 }
 
 @RoutePage()
