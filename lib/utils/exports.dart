@@ -23,4 +23,8 @@ export 'package:auto_router_demo/services/storage/shared_pref.dart';
 export '../../utils/user_role_enum.dart';
 
 export 'package:auto_router_demo/ui/start_screens/screen_home.dart';
+export 'package:firebase_core/firebase_core.dart';
+export 'package:firebase_messaging/firebase_messaging.dart';
+
+
 

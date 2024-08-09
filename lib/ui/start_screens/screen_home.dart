@@ -74,7 +74,9 @@ class ScreenHome extends StatelessWidget {
             buildNavigationButton(
               context: context,
               onPressed: () {
-                appRouter.push(const NonAdminRoute());
+                appRouter.push( DeepLinkingRoute(token: '123'));
+                // appRouter.pushNamed("/DeepLinkRoute/123");
+
               },
               text: "Deeplink",
             ),

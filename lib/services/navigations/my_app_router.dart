@@ -98,7 +98,11 @@ class MyAppRouter extends $MyAppRouter {
             AutoRoute(page: UserManagementRoute.page),
           ],
         ),
-      ];
+        AutoRoute(
+            path: "/DeepLinkRoute/:token",
+            page: DeepLinkingRoute.page),
+
+  ];
 }
 
 @RoutePage()

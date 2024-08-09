@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "214828601133",
+    "project_id": "auto-route-demo",
+    "storage_bucket": "auto-route-demo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:214828601133:android:e96a4a32b582207c160da4",
+        "android_client_info": {
+          "package_name": "com.example.auto_router_demo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfBd2h1QuudovGPufLfvicJJdR3rdzip0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
