@@ -1,9 +1,17 @@
-
-import '../../utils/exports.dart';
+import '../../../utils/exports.dart';
 
 @RoutePage()
-class ScreenNavigationHome extends StatelessWidget {
+class ScreenNavigationHome extends StatefulWidget {
   const ScreenNavigationHome({super.key});
+
+  @override
+  ScreenNavigationHomeState createState() => ScreenNavigationHomeState();
+}
+
+class ScreenNavigationHomeState extends State<ScreenNavigationHome> {
+  final TextEditingController _idController = TextEditingController();
+  final TextEditingController _empNoController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -18,33 +26,50 @@ class ScreenNavigationHome extends StatelessWidget {
       ),
       body: Column(
         children: [
-          _buildNavigationButton(
-            context: context,
-            onPressed: () {
-              context.router.push(RouteDetails(id: '3333'));
-            },
-            text: 'Go to Details Screen using Argument',
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: TextField(
+              controller: _idController,
+              decoration: const InputDecoration(
+                labelText: 'Enter ID',
+                fillColor: Colors.white,
+                filled: true,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: TextField(
+              controller: _empNoController,
+              decoration: const InputDecoration(
+                labelText: 'Enter Employee Number',
+                fillColor: Colors.white,
+                filled: true,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: TextField(
+              controller: _nameController,
+              decoration: const InputDecoration(
+                labelText: 'Enter Name',
+                fillColor: Colors.white,
+                filled: true,
+              ),
+            ),
           ),
           _buildNavigationButton(
             context: context,
             onPressed: () {
+              // Navigate to ScreenDetails with the input values
               context.router.push(RouteDetails(
-                empNo: '3333',
-                name: 'Anil Thummar',
+                id: _idController.text,
+                empNo: _empNoController.text,
+                name: _nameController.text,
               ));
             },
-            text: 'Go to Details Screen using Query Parameters',
-          ),
-          _buildNavigationButton(
-            context: context,
-            onPressed: () {
-              context.router.push(RouteDetails(
-                id: '123123',
-                empNo: '4444',
-                name: 'John ',
-              ));
-            },
-            text: 'Go to Details Screen using Path and Query Parameters',
+            text: 'Submit',
           ),
         ],
       ),
