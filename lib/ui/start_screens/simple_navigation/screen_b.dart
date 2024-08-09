@@ -7,8 +7,7 @@ class ScreenB extends StatelessWidget implements AutoRouteWrapper{
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+   return wrappedRoute(context);
   }
 
   @override
