@@ -18,7 +18,7 @@ class AutoTabsScaffoldPage extends StatelessWidget {
             style: TextStyle(
                 fontSize: 22,
                 color: Colors.black,
-                fontWeight: FontWeight.bold)),
+                fontWeight: FontWeight.bold),),
       ),
 
 

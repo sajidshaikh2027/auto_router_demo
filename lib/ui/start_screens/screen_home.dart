@@ -67,10 +67,18 @@ class ScreenHome extends StatelessWidget {
             buildNavigationButton(
               context: context,
               onPressed: () {
+                appRouter.push(const UserHomeRoute());
+              },
+              text: "Finding The Right Router",
+            ),
+            buildNavigationButton(
+              context: context,
+              onPressed: () {
                 appRouter.push(const NonAdminRoute());
               },
-              text: "Route Guards",
+              text: "Deeplink",
             ),
+
 
           ],
         ),

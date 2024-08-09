@@ -33,15 +33,18 @@ class MyAppRouter extends $MyAppRouter {
             path: AppPath.dashboard,
             maintainState: false,
             children: [
-              CustomRoute(page: HomeWithBottomPageRoute.page, path: AppPath.home, children: [
-                CustomRoute(
-                  page: HomeRoute.page,
-                ),
-                CustomRoute(
-                  page: UserDetails.page,
-                  transitionsBuilder: TransitionsBuilders.zoomIn,
-                ),
-              ]),
+              CustomRoute(
+                  page: HomeWithBottomPageRoute.page,
+                  path: AppPath.home,
+                  children: [
+                    CustomRoute(
+                      page: HomeRoute.page,
+                    ),
+                    CustomRoute(
+                      page: UserDetails.page,
+                      transitionsBuilder: TransitionsBuilders.zoomIn,
+                    ),
+                  ]),
               CustomRoute(
                 page: AccountRoute.page,
                 path: AppPath.account,
@@ -60,7 +63,6 @@ class MyAppRouter extends $MyAppRouter {
                   ])
             ]),
         CustomRoute(path: '/*', page: RouteNotFound.page),
-
         CustomRoute(
           page: AccountDetailsRoute.page,
           transitionsBuilder: TransitionsBuilders.zoomIn,
@@ -78,6 +80,24 @@ class MyAppRouter extends $MyAppRouter {
         AutoRoute(
           page: GuestRoute.page,
         ),
+        AutoRoute(
+          page: UserHomeRoute.page,
+        ),
+
+        AutoRoute(
+          page: UserProfileRoute.page,
+          children: [
+            AutoRoute(page: UserProfileRoute.page, initial: true),
+            AutoRoute(page: UserSettingRoute.page),
+          ],
+        ),
+        AutoRoute(
+          page: UserAdminRoute.page,
+          children: [
+            AutoRoute(page: UserDashboardRoute.page, initial: true),
+            AutoRoute(page: UserManagementRoute.page),
+          ],
+        ),
       ];
 }
 
@@ -89,6 +109,23 @@ class AccountTabsPage extends AutoRouter {
 @RoutePage(name: "HomeWithBottomPageRoute")
 class HomeWithBottomPage extends AutoRouter {
   const HomeWithBottomPage({super.key});
+}
+
+/// this for finding right routes
+@RoutePage(name: "UserProfileRoute")
+class UserProfileRouter extends StatelessWidget {
+  const UserProfileRouter({super.key});
+
+  @override
+  Widget build(BuildContext context) => const AutoRouter();
+}
+
+@RoutePage(name: "UserAdminRoute")
+class UserAdminRouter extends StatelessWidget {
+  const UserAdminRouter({super.key});
+
+  @override
+  Widget build(BuildContext context) => const AutoRouter();
 }
 
 /*
