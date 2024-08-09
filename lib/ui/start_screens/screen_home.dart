@@ -31,7 +31,7 @@ class ScreenHome extends StatelessWidget {
             buildNavigationButton(
               context: context,
               onPressed: () {
-                context.router.push(RouteNavigationHome());
+                context.router.push(const RouteNavigationHome());
               },
               text: "Navigation With different Argument",
             ),

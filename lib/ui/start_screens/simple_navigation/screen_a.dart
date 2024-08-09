@@ -20,7 +20,7 @@ class ScreenA extends StatelessWidget {
             onPressed: () {
               print("current_name Screen A : ${context.router.current.path}");
 
-              context.router.push(RouteB());
+              context.router.push(const RouteB());
 
               // Navigate to Screen B with arguments
 
