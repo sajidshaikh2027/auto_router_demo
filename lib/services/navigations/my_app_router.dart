@@ -15,7 +15,7 @@ class MyAppRouter extends $MyAppRouter {
           page: RouteA.page,
         ),
         AutoRoute(page: RouteB.page),
-        CustomRoute(
+        AutoRoute(
           page: RouteC.page,
         ),
         AutoRoute(page: RouteNavigationHome.page),
@@ -68,8 +68,7 @@ class MyAppRouter extends $MyAppRouter {
           transitionsBuilder: TransitionsBuilders.zoomIn,
           durationInMilliseconds: 200,
         ),
-        AutoRoute(page: AutoTabsScaffoldRoute.page,
-            children: [
+        AutoRoute(page: AutoTabsScaffoldRoute.page, children: [
           AutoRoute(page: Tab1Route.page),
           AutoRoute(page: Tab2Route.page),
           AutoRoute(page: Tab3Route.page),
@@ -84,7 +83,6 @@ class MyAppRouter extends $MyAppRouter {
         AutoRoute(
           page: UserHomeRoute.page,
         ),
-
         AutoRoute(
           page: UserProfileRoute.page,
           children: [
@@ -99,11 +97,8 @@ class MyAppRouter extends $MyAppRouter {
             AutoRoute(page: UserManagementRoute.page),
           ],
         ),
-        AutoRoute(
-            path: "/DeepLinkRoute/:token",
-            page: DeepLinkingRoute.page),
-
-  ];
+        AutoRoute(path: "/DeepLinkRoute/:token", page: DeepLinkingRoute.page),
+      ];
 }
 
 @RoutePage()
