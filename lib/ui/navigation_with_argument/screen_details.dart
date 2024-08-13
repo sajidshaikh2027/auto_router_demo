@@ -60,14 +60,6 @@ class ScreenDetails extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Text(
-              'Parameter Query- EmployeeName: ${name??''}',
-              style: const TextStyle(fontSize: 22, color: Colors.black),
-            ),
-          ),
-          const SizedBox(height: 10),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
-            child: Text(
               'Path Parameter-: ${name??''}',
               style: const TextStyle(fontSize: 22, color: Colors.black),
             ),
