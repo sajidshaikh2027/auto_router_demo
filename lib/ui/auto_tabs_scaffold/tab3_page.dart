@@ -15,7 +15,8 @@ class Tab3Page extends StatelessWidget {
             return IconButton(
               icon: const Icon(Icons.arrow_back),
               onPressed: () {
-                appRouter.back();
+                context.tabsRouter.setActiveIndex(1); // Navigate back to Tab 2
+                // appRouter.back();
               },
             );
           }

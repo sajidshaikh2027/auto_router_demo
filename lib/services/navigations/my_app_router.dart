@@ -68,7 +68,8 @@ class MyAppRouter extends $MyAppRouter {
           transitionsBuilder: TransitionsBuilders.zoomIn,
           durationInMilliseconds: 200,
         ),
-        AutoRoute(page: AutoTabsScaffoldRoute.page, children: [
+        AutoRoute(page: AutoTabsScaffoldRoute.page,
+            children: [
           AutoRoute(page: Tab1Route.page),
           AutoRoute(page: Tab2Route.page),
           AutoRoute(page: Tab3Route.page),
