@@ -17,10 +17,25 @@ class ScreenA extends StatelessWidget {
       ),
       body: Center(
         child: ElevatedButton(
-            onPressed: () {
+            onPressed: () async {
               print("current_name Screen A : ${context.router.current.path}");
 
-              context.router.push(const RouteB());
+              // context.router.push(const RouteB());
+
+              // Navigate to DetailPage and await the result
+              final result = await context.router.push(RouteB(),);
+              // var result = await appRouter.push<bool>(RouteB());
+
+
+              // Handle the result
+              if (result != null && result is bool)  {
+                print("Result: $result");
+
+                // ScaffoldMessenger.of(context).showSnackBar(
+                //   SnackBar(content: Text('Result: $result')),
+                // );
+              }
+
 
               // Navigate to Screen B with arguments
 

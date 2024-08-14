@@ -1,8 +1,11 @@
 import '../../utils/exports.dart';
 
 class MyObserver extends AutoRouterObserver {
+  final List<Route<dynamic>> routeStack = [];
+
   @override
-  void didPush(Route route, Route? previousRoute) {}
+  void didPush(Route route, Route? previousRoute) {
+  }
 
   @override
   void didReplace({Route? newRoute, Route? oldRoute}) {
@@ -13,6 +16,8 @@ class MyObserver extends AutoRouterObserver {
   @override
   void didPop(Route route, Route? previousRoute) {
     print('did pop :${route.settings.name}');
+
+
 
     /*print(route.settings);
     if(route.settings.name == "UserDetails"){

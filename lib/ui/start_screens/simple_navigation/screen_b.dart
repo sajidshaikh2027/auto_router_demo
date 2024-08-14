@@ -55,7 +55,9 @@ class ScreenB extends StatelessWidget implements AutoRouteWrapper{
                   print("current_name Screen B : ${context.router.current.path}");
 
                   // on Web it calls window.history.back(); on Native it navigates you back to the previous location
-                  context.router.back();
+                  // context.router.maybePop('This is the result!');
+                  appRouter.maybePop(true);
+                  // context.router.back();
 
 
                 },
