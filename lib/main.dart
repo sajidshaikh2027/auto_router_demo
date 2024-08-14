@@ -75,7 +75,7 @@ class MyApp extends StatelessWidget {
 
         // Deep Linking config
         deepLinkBuilder: (deepLink) {
-          if (deepLink.path.startsWith('/DeepLinkRoute')) {
+          if (deepLink.path.startsWith('/products')) {
             return deepLink;
           } else {
             return DeepLink.defaultPath;

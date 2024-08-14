@@ -17,6 +17,11 @@ class MyAppRouter extends $MyAppRouter {
         AutoRoute(page: RouteB.page),
         AutoRoute(
           page: RouteC.page,
+          // children: ,initial: ,usesPathAsKey: ,reverseDurationInMilliseconds: ,
+          // restorationId: ,path: ,opaque: ,meta: ,maintainState: ,guards: ,
+          // fullscreenDialog: ,fullMatch: ,durationInMilliseconds: ,
+          // customRouteBuilder: ,barrierLabel: ,barrierDismissible: ,barrierColor:,
+          // title: ,keepHistory: ,transitionsBuilder: ,allowSnapshotting:
         ),
         AutoRoute(page: RouteNavigationHome.page),
         AutoRoute(
@@ -82,23 +87,16 @@ class MyAppRouter extends $MyAppRouter {
         AutoRoute(
           page: GuestRoute.page,
         ),
-        AutoRoute(
-          page: UserHomeRoute.page,
-        ),
-        AutoRoute(
-          page: UserProfileRoute.page,
-          children: [
-            AutoRoute(page: UserProfileRoute.page, initial: true),
-            AutoRoute(page: UserSettingRoute.page),
-          ],
-        ),
-        AutoRoute(
-          page: UserAdminRoute.page,
-          children: [
-            AutoRoute(page: UserDashboardRoute.page, initial: true),
-            AutoRoute(page: UserManagementRoute.page),
-          ],
-        ),
+
+        /// finding the right routes using Tab controller
+        AutoRoute(page: UserDetailsPageRoute.page),
+        AutoRoute(page: UserDashboardPageRoute.page, children: [
+          AutoRoute(
+            page: Tab1PageRout.page,
+          ),
+          AutoRoute(page: Tab2PageRoute.page)
+        ]),
+
         AutoRoute(path: "/DeepLinkRoute/:token", page: DeepLinkingRoute.page),
       ];
 }

@@ -7,6 +7,7 @@ class AutoTabsScaffoldPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
+
       routes: const [
         Tab1Route(),
         Tab2Route(),
