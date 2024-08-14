@@ -6,6 +6,10 @@ class MyObserver extends AutoRouterObserver {
   @override
   void didPush(Route route, Route? previousRoute) {
 
+    if(route.settings.name == "AccountDetailsRoute"){
+      print("From ${previousRoute?.settings.name} to ${route.settings.name}");
+    }
+
     // print(route.settings);
     // if (route.settings.name == "UserDetails") {
     //   print("userdetails");
@@ -42,5 +46,9 @@ class MyObserver extends AutoRouterObserver {
   @override
   void didChangeTabRoute(TabPageRoute route, TabPageRoute previousRoute) {
     print('Tab route re-visited: ${route.name}');
+
+    if(route.name == "StatusRoute"){
+      print("From ${previousRoute.name} to ${route.name}");
+    }
   }
 }

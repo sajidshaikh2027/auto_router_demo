@@ -81,6 +81,15 @@ class ScreenHome extends StatelessWidget {
               text: "Deeplink",
             ),
 
+            buildNavigationButton(
+              context: context,
+              onPressed: () {
+                appRouter.push( const AccountDetailsRoute());
+
+              },
+              text: "Track Routes History",
+            ),
+
 
           ],
         ),
