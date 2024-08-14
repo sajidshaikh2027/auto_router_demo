@@ -10,16 +10,16 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i31;
 import 'package:auto_router_demo/services/navigations/my_app_router.dart'
-    as _i3;
+    as _i9;
 import 'package:auto_router_demo/ui/account/account_details_page.dart' as _i1;
 import 'package:auto_router_demo/ui/account/account_page.dart' as _i2;
 import 'package:auto_router_demo/ui/auto_tabs_scaffold/auto_tabs_page.dart'
-    as _i4;
+    as _i3;
 import 'package:auto_router_demo/ui/auto_tabs_scaffold/tab1_page.dart' as _i22;
 import 'package:auto_router_demo/ui/auto_tabs_scaffold/tab2_page.dart' as _i23;
 import 'package:auto_router_demo/ui/auto_tabs_scaffold/tab3_page.dart' as _i24;
-import 'package:auto_router_demo/ui/dashboard.dart' as _i6;
-import 'package:auto_router_demo/ui/deep_linking/deep_linking_page.dart' as _i7;
+import 'package:auto_router_demo/ui/dashboard.dart' as _i5;
+import 'package:auto_router_demo/ui/deep_linking/deep_linking_page.dart' as _i6;
 import 'package:auto_router_demo/ui/find_right_router/user_dashboard_screen.dart'
     as _i25;
 import 'package:auto_router_demo/ui/find_right_router/user_home_screen.dart'
@@ -30,7 +30,7 @@ import 'package:auto_router_demo/ui/find_right_router/user_profile_screen.dart'
     as _i29;
 import 'package:auto_router_demo/ui/find_right_router/user_setting_screen.dart'
     as _i30;
-import 'package:auto_router_demo/ui/home/home_page.dart' as _i9;
+import 'package:auto_router_demo/ui/home/home_page.dart' as _i8;
 import 'package:auto_router_demo/ui/home/home_page_details.dart' as _i26;
 import 'package:auto_router_demo/ui/login/login_page.dart' as _i10;
 import 'package:auto_router_demo/ui/navigation_with_argument/screen_details.dart'
@@ -39,11 +39,11 @@ import 'package:auto_router_demo/ui/navigation_with_argument/screen_navigation_h
     as _i19;
 import 'package:auto_router_demo/ui/page_not_found/page_not_found.dart'
     deferred as _i12;
-import 'package:auto_router_demo/ui/role_base_guard/guest_page.dart' as _i8;
+import 'package:auto_router_demo/ui/role_base_guard/guest_page.dart' as _i7;
 import 'package:auto_router_demo/ui/role_base_guard/non_admin_page.dart'
     as _i11;
 import 'package:auto_router_demo/ui/settings/setting_page.dart' as _i20;
-import 'package:auto_router_demo/ui/settings/tabs/chat_page.dart' as _i5;
+import 'package:auto_router_demo/ui/settings/tabs/chat_page.dart' as _i4;
 import 'package:auto_router_demo/ui/settings/tabs/pageview/page_view_one.dart'
     as _i13;
 import 'package:auto_router_demo/ui/settings/tabs/status_page.dart' as _i21;
@@ -74,28 +74,22 @@ abstract class $MyAppRouter extends _i31.RootStackRouter {
         child: const _i2.AccountPage(),
       );
     },
-    AccountTabsRoute.name: (routeData) {
-      return _i31.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i3.AccountTabsPage(),
-      );
-    },
     AutoTabsScaffoldRoute.name: (routeData) {
       return _i31.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i4.AutoTabsScaffoldPage(),
+        child: const _i3.AutoTabsScaffoldPage(),
       );
     },
     ChatRoute.name: (routeData) {
       return _i31.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i5.ChatPage(),
+        child: const _i4.ChatPage(),
       );
     },
     Dashboard.name: (routeData) {
       return _i31.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i6.Dashboard(),
+        child: const _i5.Dashboard(),
       );
     },
     DeepLinkingRoute.name: (routeData) {
@@ -105,7 +99,7 @@ abstract class $MyAppRouter extends _i31.RootStackRouter {
               DeepLinkingRouteArgs(token: pathParams.optString('token')));
       return _i31.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i7.DeepLinkingPage(
+        child: _i6.DeepLinkingPage(
           key: args.key,
           token: args.token,
         ),
@@ -114,19 +108,19 @@ abstract class $MyAppRouter extends _i31.RootStackRouter {
     GuestRoute.name: (routeData) {
       return _i31.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i8.GuestPage(),
+        child: const _i7.GuestPage(),
       );
     },
     HomeRoute.name: (routeData) {
       return _i31.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i9.HomePage(),
+        child: const _i8.HomePage(),
       );
     },
     HomeWithBottomPageRoute.name: (routeData) {
       return _i31.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i3.HomeWithBottomPage(),
+        child: const _i9.HomeWithBottomPage(),
       );
     },
     LoginRoute.name: (routeData) {
@@ -243,7 +237,7 @@ abstract class $MyAppRouter extends _i31.RootStackRouter {
     UserAdminRoute.name: (routeData) {
       return _i31.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i3.UserAdminRouter(),
+        child: const _i9.UserAdminRouter(),
       );
     },
     UserDashboardRoute.name: (routeData) {
@@ -318,21 +312,7 @@ class AccountRoute extends _i31.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i3.AccountTabsPage]
-class AccountTabsRoute extends _i31.PageRouteInfo<void> {
-  const AccountTabsRoute({List<_i31.PageRouteInfo>? children})
-      : super(
-          AccountTabsRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'AccountTabsRoute';
-
-  static const _i31.PageInfo<void> page = _i31.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i4.AutoTabsScaffoldPage]
+/// [_i3.AutoTabsScaffoldPage]
 class AutoTabsScaffoldRoute extends _i31.PageRouteInfo<void> {
   const AutoTabsScaffoldRoute({List<_i31.PageRouteInfo>? children})
       : super(
@@ -346,7 +326,7 @@ class AutoTabsScaffoldRoute extends _i31.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i5.ChatPage]
+/// [_i4.ChatPage]
 class ChatRoute extends _i31.PageRouteInfo<void> {
   const ChatRoute({List<_i31.PageRouteInfo>? children})
       : super(
@@ -360,7 +340,7 @@ class ChatRoute extends _i31.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i6.Dashboard]
+/// [_i5.Dashboard]
 class Dashboard extends _i31.PageRouteInfo<void> {
   const Dashboard({List<_i31.PageRouteInfo>? children})
       : super(
@@ -374,7 +354,7 @@ class Dashboard extends _i31.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i7.DeepLinkingPage]
+/// [_i6.DeepLinkingPage]
 class DeepLinkingRoute extends _i31.PageRouteInfo<DeepLinkingRouteArgs> {
   DeepLinkingRoute({
     _i32.Key? key,
@@ -413,7 +393,7 @@ class DeepLinkingRouteArgs {
 }
 
 /// generated route for
-/// [_i8.GuestPage]
+/// [_i7.GuestPage]
 class GuestRoute extends _i31.PageRouteInfo<void> {
   const GuestRoute({List<_i31.PageRouteInfo>? children})
       : super(
@@ -427,7 +407,7 @@ class GuestRoute extends _i31.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i9.HomePage]
+/// [_i8.HomePage]
 class HomeRoute extends _i31.PageRouteInfo<void> {
   const HomeRoute({List<_i31.PageRouteInfo>? children})
       : super(
@@ -441,7 +421,7 @@ class HomeRoute extends _i31.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i3.HomeWithBottomPage]
+/// [_i9.HomeWithBottomPage]
 class HomeWithBottomPageRoute extends _i31.PageRouteInfo<void> {
   const HomeWithBottomPageRoute({List<_i31.PageRouteInfo>? children})
       : super(
@@ -733,7 +713,7 @@ class Tab3Route extends _i31.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i3.UserAdminRouter]
+/// [_i9.UserAdminRouter]
 class UserAdminRoute extends _i31.PageRouteInfo<void> {
   const UserAdminRoute({List<_i31.PageRouteInfo>? children})
       : super(

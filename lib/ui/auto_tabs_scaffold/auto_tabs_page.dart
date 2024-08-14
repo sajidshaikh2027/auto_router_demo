@@ -22,6 +22,7 @@ class AutoTabsScaffoldPage extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
+
         leading: tabsRouter.canNavigateBack
             ? IconButton(
           icon: const Icon(Icons.arrow_back),

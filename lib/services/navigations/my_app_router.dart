@@ -33,6 +33,7 @@ class MyAppRouter extends $MyAppRouter {
             path: AppPath.dashboard,
             maintainState: false,
             children: [
+
               CustomRoute(
                   page: HomeWithBottomPageRoute.page,
                   path: AppPath.home,
@@ -43,6 +44,7 @@ class MyAppRouter extends $MyAppRouter {
                     CustomRoute(
                       page: UserDetails.page,
                       transitionsBuilder: TransitionsBuilders.zoomIn,
+
                     ),
                   ]),
               CustomRoute(
@@ -101,10 +103,10 @@ class MyAppRouter extends $MyAppRouter {
       ];
 }
 
-@RoutePage()
-class AccountTabsPage extends AutoRouter {
-  const AccountTabsPage({super.key});
-}
+// @RoutePage()
+// class AccountTabsPage extends AutoRouter {
+//   const AccountTabsPage({super.key});
+// }
 
 @RoutePage(name: "HomeWithBottomPageRoute")
 class HomeWithBottomPage extends AutoRouter {
