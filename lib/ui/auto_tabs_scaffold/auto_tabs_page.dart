@@ -24,8 +24,7 @@ class AutoTabsScaffoldPage extends StatelessWidget {
           ),
         ),
 
-        leading: tabsRouter.canNavigateBack
-            ? IconButton(
+        leading: tabsRouter.canNavigateBack ? IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
             if (tabsRouter.activeIndex > 0) {

@@ -9,6 +9,7 @@ class Tab1Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:  AppBar(
+        automaticallyImplyLeading: false,
         centerTitle: true,
       ),
       body: const Center(child: Text('Content of Tab 1')),
